@@ -1,0 +1,118 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<div class="filters">
+   <div class="d-flex mb-2 justify-content-center align-items-center">
+      <h3 class="text-primary fw-bold">Student Records Visualize</h3>
+   </div>
+   <div class="d-flex mb-3">
+   <select id="month-filter" class="form-control w-50 mr-2">
+      <option selected="" disabled="">-- Select Month --</option>
+      <option value="January">January</option>
+      <option value="February">February</option>
+      <option value="March">March</option>
+      <option value="April">April</option>
+      <option value="May">May</option>
+      <option value="June">June</option>
+      <option value="July">July</option>
+      <option value="August">August</option>
+      <option value="September">September</option>
+      <option value="October">October</option>
+      <option value="November">November</option>
+      <option value="December">December</option>
+   </select>
+   <select id="class-filter" class="form-control w-50 mr-2" required="">
+      <option selected="" disabled="">--select Your Class--</option>
+      <option value="(10th-A)">(10th-A)</option>
+      <option value="(10th-B)">(10th-B)</option>
+      <option value="(10th-C)">(10th-C)</option>
+    </select>
+   <select id="status-filter" class="form-control w-50 mr-2">
+      <option value="">All</option>
+      <option value="Paid">Paid</option>
+      <option value="Pending">Pending</option>
+      <option value="Cancel">Cancel</option>    
+   </select>
+    <button class="btn btn-primary mr-2" onclick="fetchData()">Filter By</button>
+    <button class="btn btn-primary" onclick="window.location.href='/Payment_registers'">Go Back</button>
+   </div>
+   <canvas id="statusChart" width="400" height="200"></canvas>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+   <script>
+     function fetchData() {
+        const month = $('#month-filter').val();
+        const class_section = $('#class-filter').val();
+        const status = $('#status-filter').val();
+
+       frappe.call({
+            method: "frappe_new.api.get_fee_summary",
+            args: { month, class_section, status },
+            callback: function (r) {
+                const data = r.message;
+                const statusCount = {
+                    Paid: 0,
+                    Pending: 0,
+                    Cancel: 0
+                };
+                data.forEach((row) => {
+                    statusCount[row.status] +=1;
+                });
+                renderChart(statusCount);
+            }
+        })
+
+     }
+     function renderChart(data) {
+        const ctx = document.getElementById('statusChart').getContext('2d');
+         if (window.bar !== undefined) {
+             window.bar.destroy(); 
+        }
+        const total = data.Paid + data.Pending + data.Cancel;
+        window.bar = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Paid', 'Pending', 'Cancel'],
+                datasets: [{
+                    label: 'Student Count',
+                    data: [data.Paid, data.Pending, data.Cancel],
+                    backgroundColor: ['green', 'orange', 'red']
+                }]
+            },
+            options: {
+                plugins: {
+                    datalabels: {
+                        color: 'white',
+                        anchor: 'center',
+                        align: 'center',
+                        font: {
+                            weight: 'bold',
+                            size: 16
+                        },
+                        formatter: function (value, context) {
+                            const percentage = ((value / total) * 100)
+                            const percentRound = Math.round(percentage)
+                            return `Student Count (${value})\n\n(${percentRound}%)`;
+                        }
+                    }
+                },
+                animation: {
+                    duration: 3000,
+                    easing: 'easeOutBounce'
+                },
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        })
+     }
+     $(document).ready(function () {
+        fetchData();
+     })
+   </script>
+</div>
+{% endblock %}

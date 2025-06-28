@@ -17,3 +17,18 @@ def get_actual_qty(product: str, location: str) -> float:
 def handle_alert(doc, method=None):
     frappe.msgprint("This is a doc events alert")
    
+@frappe.whitelist()
+def get_fee_summary(month=None, class_section=None, status=None):
+    filters = {}
+    if month:
+        filters["fee_month"] = month
+    if class_section:
+        filters["class"] = class_section
+    if status:
+        filters["status"] = status
+
+    return frappe.get_all(
+        "Std Fee Registration",
+        filters=filters,
+        fields=["fee_month", "class", "status", "name"]
+    )

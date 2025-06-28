@@ -1,0 +1,1 @@
+console.log("this is webform include based on the doctype only")

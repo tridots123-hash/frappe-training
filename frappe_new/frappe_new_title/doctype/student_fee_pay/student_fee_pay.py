@@ -3,6 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.utils import flt, fmt_money
 from frappe import _
 
 class StudentFeePay(Document):
@@ -21,7 +22,6 @@ def pre_pay_registor_student(student_id, student_name, month):
             FROM `tabStd Fee Registration`
             WHERE student_id = %s AND student_name = %s AND fee_month = %s                
         """,(student_id, student_name, month), as_dict=True)
-
         return data
 
 @frappe.whitelist()

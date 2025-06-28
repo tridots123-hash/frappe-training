@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "AMT-.###",
+ "creation": "2025-06-25 17:14:21.134641",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "total_amount",
+  "total_gst",
+  "month"
+ ],
+ "fields": [
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "options": "INR"
+  },
+  {
+   "fieldname": "total_gst",
+   "fieldtype": "Percent",
+   "label": "Total GST"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Date",
+   "label": "Month"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-25 17:42:00.356412",
+ "modified_by": "Administrator",
+ "module": "frappe-new-title",
+ "name": "Student Amount Records",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

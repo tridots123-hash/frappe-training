@@ -2,7 +2,7 @@ app_name = "frappe_new"
 app_title = "frappe-new-title"
 app_publisher = "imran"
 app_description = "test app"
-app_email = "imranexpo123@gmail.com"
+app_email = "imranfrappe@gmail.com"
 app_license = "mit"
 
 # Apps
@@ -31,56 +31,82 @@ app_license = "mit"
 #     {"from_route": "/student-records", "to_route": "frappe_new/www/student-records"}
 # ]
 
-doctype_js = {
-    "Product Transfer": "public/js/product_transfer.js"
-}
+# doctype_js = {
+#     "Product Transfer": "public/js/product_transfer.js"
+# }
 
-doctype_js = {
-    "Move": "public/js/movie.js"
-}
+# doctype_js = {
+#     "Move": "public/js/movie.js"
+# }
 
-doctype_js = {
-    "Razorpay test": "public/js/razorpay_test.js"
-}
+# doctype_js = {
+#     "Razorpay test": "public/js/razorpay_test.js"
+# }
 
-fixtures = [
-    {
-        "dt": "News Alert",
-        "filters": {
-            "is_active": 1
-        }
-    }
-]
+# fixtures = [
+#     {
+#         "dt": "News Alert",
+#         "filters": {
+#             "is_active": 1
+#         }
+#     }
+# ]
+
+# app_include_js = [
+#     "https://checkout.razorpay.com/v1/checkout.js"
+# ]
+
+# # app_include_js is used access app inside desk only write the code in global format
+# app_include_js = ["/assets/frappe_new/js/app_desk.js"]
+# # web_include_js is used access web side related only work in with app only using website like webform,webview,webpage
+# web_include_js = ["/assets/frappe_new/js/web_include.js"]
+# # webform_include_js is only using webform only based on the particular doctype
+# webform_include_js = {"Book": "public/js/webform_include.js"}
+# # page_js this is used to access the particular pages only
+# page_js = {"amazon" : "public/js/shop_page.js"}
+
 # app_include_js = "/assets/frappe_new/js/razorpay_test.js"
 
 # my_custom_app/hooks.py
 
-sounds = [
-    {
-        "name": "success",
-        "src": "/assets/frappe_new/sounds/glass-break-316720.mp3"
-    }
-]
+# sounds = [
+#     {
+#         "name": "success",
+#         "src": "/assets/frappe_new/sounds/glass-break-316720.mp3"
+#     }
+# ]
+
+# website_route_rules = [
+#     {"from_route": "/home_works", "to_route": "home_work"}
+# ]
 
 website_route_rules = [
-    {"from_route": "/home_work", "to_route": "home_work"}
+    {"from_route": "/home_works", "to_route": "home_work"},
+    {"from_route": "/Payment_registers", "to_route": "Payment_register"},
+    {"from_route": "/student_payments", "to_route": "student_payment"},
+    {"from_route": "/student_data_visualizes", "to_route": "student_data_visualize"},
+    {"from_route": "/halal_restaurants", "to_route": "halal_restaurant"}   
 ]
 
-website_route_rules = [
-    {"from_route": "/expense-entry", "to_route": "expense_entry"}
+portal_menu_items = [
+    {"title": "Home Work", "route": "/home_works", "role": "Administrator"},
+    {"title": "Std Payment Register", "route": "/Payment_registers", "role": "Administrator"},
+    {"title": "Std Payment", "route": "/student_payments", "role": "Administrator"},
+    {"title": "Std Data Visual", "route": "/student_data_visualizes", "role": "Administrator"}
 ]
 
-website_route_rules = [
-    {"from_route": "/student_payment", "to_route": "student_payment"}
-]
 
-website_route_rules = [
-    {"from_route": "/Payment_register", "to_route": "Payment_register"}
-]
+# website_route_rules = [
+#     {"from_route": "/student_payment", "to_route": "student_payment"}
+# ]
 
-app_include_js = [
-    "https://checkout.razorpay.com/v1/checkout.js"
-]
+# website_route_rules = [
+#     {"from_route": "/Payment_register", "to_route": "Payment_register"}
+# ]
+
+# website_route_rules = [
+#     {"from_route": "/student_data_visualize", "to_route": "student_data_visualize"}
+# ]
 
 # Includes in <head>
 # ------------------
@@ -118,7 +144,7 @@ app_include_js = [
 # ----------
 
 # application home page (will override Website Settings)
-home_page = "login"
+# home_page = "login"
 
 # website user home page (by Role)
 # role_home_page = {
@@ -190,27 +216,22 @@ home_page = "login"
 # ---------------
 # Override standard doctype classes
 
-override_doctype_class = {
-	"News Paper Article": "frappe_new.frappe_new_title.overrides.news_paper_articles.NewsPaperArticle"
-}
+# override_doctype_class = {
+# 	"News Paper Article": "frappe_new.frappe_new_title.overrides.news_paper_articles.NewsPaperArticle"
+# }
 
-before_migrate = "frappe_new.frappe_new_title.migrate.before_migrate"
-after_migrate = "frappe_new.frappe_new_title.migrate.after_migrate"
-
-portal_menu_items = [
-    {"title": "Dashboard", "route": "/dashboard", "role": "Administrator"},
-    {"title": "Orders", "route": "/orders", "role": "Administrator"},
-]
+# before_migrate = "frappe_new.frappe_new_title.migrate.before_migrate"
+# after_migrate = "frappe_new.frappe_new_title.migrate.after_migrate"
 
 # Document Events
 # ---------------
 # Hook on document methods and events
 
-doc_events = {
-	"News Alert": {
-		"before_insert": "frappe_new.api.handle_alert"
-	}
-}
+# doc_events = {
+# 	"News Alert": {
+# 		"before_insert": "frappe_new.api.handle_alert"
+# 	}
+# }
 
 # Scheduled Tasks
 # ---------------

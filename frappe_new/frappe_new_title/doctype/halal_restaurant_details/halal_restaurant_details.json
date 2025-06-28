@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:restaurant_name",
+ "creation": "2025-06-12 14:51:11.953570",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "restaurant_name",
+  "owner_name",
+  "contact_number",
+  "email_id",
+  "full_address",
+  "halal_certificate_number",
+  "certificate_expiry_date",
+  "opening_time",
+  "closing_time",
+  "restaurant_image",
+  "description__about_us",
+  "food_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "restaurant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Restaurant Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "owner_name",
+   "fieldtype": "Data",
+   "label": "Owner Name"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID"
+  },
+  {
+   "fieldname": "full_address",
+   "fieldtype": "Small Text",
+   "label": "Full Address"
+  },
+  {
+   "fieldname": "halal_certificate_number",
+   "fieldtype": "Data",
+   "label": "Halal Certificate Number"
+  },
+  {
+   "fieldname": "certificate_expiry_date",
+   "fieldtype": "Date",
+   "label": "Certificate Expiry Date"
+  },
+  {
+   "fieldname": "opening_time",
+   "fieldtype": "Time",
+   "label": "Opening Time"
+  },
+  {
+   "fieldname": "closing_time",
+   "fieldtype": "Time",
+   "label": "Closing Time"
+  },
+  {
+   "fieldname": "restaurant_image",
+   "fieldtype": "Attach Image",
+   "label": "Restaurant Image"
+  },
+  {
+   "fieldname": "description__about_us",
+   "fieldtype": "Text Editor",
+   "label": "Description / About Us"
+  },
+  {
+   "fieldname": "food_list",
+   "fieldtype": "Table",
+   "label": "Food List",
+   "options": "Halal Food List"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-16 12:55:17.941616",
+ "modified_by": "Administrator",
+ "module": "frappe-new-title",
+ "name": "Halal Restaurant Details",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_halal_restaurant_details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

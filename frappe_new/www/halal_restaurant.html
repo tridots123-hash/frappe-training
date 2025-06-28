@@ -1,0 +1,242 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<style>
+  .custom-modal {
+    max-width: 90%; 
+    margin-top: 20px !important;
+  }
+  .custom-modal .modal-content {
+    height: 80vh;
+   }
+
+ .add-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.add-icon:hover {
+  transform: scale(1.1);
+}
+
+.add-icon i {
+  font-size: 24px;
+  color: #28a745;
+}
+
+.food-item {
+  position: relative;
+}
+
+.counter-badge {
+   position: absolute;
+   top: 5px;
+   right: 63px;
+   background-color: #28a745;
+   color: white;
+   font-size: 14px;
+   font-weight: bold;
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 1;
+   pointer-events: none;
+}
+
+.total-badge {
+    position: absolute;
+    top: 3px;
+    right: -6px;
+    background-color: #28a745;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+</style>
+
+<div class="container-fluid" >
+ <div class="d-flex mb-2 justify-content-center align-items-center">
+    <h3 class="fw-bold">Halal Restaurants</h3>
+ </div>
+<div id="restaurant-list" class="d-flex flex-column align-items-center gap-4"></div>
+</div>
+<div class="modal fade" id="restaurantModal" tabindex="-1" aria-labelledby="restaurantModalLabel" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-xl custom-modal modal-dialog-centered">
+    <div class="modal-content" style="overflow-x: hidden;position: relative;">
+      <div class="modal-header">
+        <h4 class="modal-title" id="restaurantModalLabel"></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" id="closemodel" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+      <div class="col-md-5" id="modelImg">
+      </div>
+      <div class="col-md-7">
+      <p class="mt-3 mb-0 fw-semibold">Description:</p>
+      <p id="modalDescription" class="mb-3"></p>
+      <p class="fw-semibold mb-1">Timing:</p>
+      <p id="modalTime" class="text-muted"></p>
+      <p class="mt-3 mb-0 fw-semibold">Address:</p>
+      <p id="modalAddress" class="text-muted"></p>
+      <p class="fw-semibold mb-1">Phone Number:</p>
+      <p id="modalPhone" class="text-muted"></p>
+      <p class="text-success mb-2">
+      <i class="bi bi-patch-check-fill me-1"></i>Certified
+      </p>
+    </div>
+  </div>
+</div>
+<hr class="my-4" />
+<h5 class="fw-semibold mb-3 ml-4">🍽️ Popular Dishes</h5>
+<div class="row row-cols-2 row-cols-md-5" id="restaurant-dishes">
+</div>
+    <div style="position: sticky; bottom: 0;">
+      <div class="add-icon">
+        <i class="bi bi-cart-plus-fill"></i>
+        <span class="total-badge">0</span>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script>
+    let totalcount = 0;
+    document.addEventListener("DOMContentLoaded", fetchRestaurants);
+    function fetchRestaurants () {
+        return frappe.call({
+            method:"frappe_new.frappe_new_title.doctype.halal_restaurant_details.halal_restaurant_details.show_restaurants"
+        }).then((r) => {
+            const restaurants = r.message
+            const container = document.getElementById("restaurant-list");
+            container.innerHTML = "";
+
+            restaurants.forEach((res)=> {
+              const opening = formatTime(res.opening_time);
+              const closing = formatTime(res.closing_time);
+              const card = `
+                    <div class="card mb-3" style="max-width: 700px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="${res.restaurant_image}" class="img-fluid h-100" alt="${res.restaurant_name}" style="padding: 7px; border-radius: 0.75rem;">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="card-title">${res.restaurant_name}</h5>
+                            <span class="badge bg-success-subtle text-success-emphasis rounded-pill">${opening} - ${closing}</span>
+                          </div>
+                          <p class="card-text">${res.description__about_us}</p>
+                          <p class="card-text">
+                            <small class="text-body-secondary">
+                              <i class="bi bi-patch-check-fill me-1"></i>Certified
+                            </small>
+                          </p>
+                          <a href="#" class="btn btn-primary mt-2" id="view-btn" data-name="${res.name}" onclick="requestname(this)" view-details-btn" data-bs-toggle="modal" data-bs-target="#restaurantModal">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                `;
+                container.innerHTML += card;
+            })
+        })
+    }
+    function requestname(e1) {
+      const restaurant_name = $(e1).data('name');
+      frappe.call({
+        method:"frappe_new.frappe_new_title.doctype.halal_restaurant_details.halal_restaurant_details.get_restaurant_with_foods",
+        args: {restaurant_name},
+        callback: function (r) {
+           const restaurant = r.message.restaurant
+           $("#modelImg").html(`<img src="${restaurant.restaurant_image}" class="img-fluid mb-3 w-100 px-1" style="max-height: 700px; object-fit: cover; border-radius: 10px;" alt="Restaurant Image" />`)
+           $("#restaurantModalLabel").text(`${restaurant.restaurant_name}`);
+           $("#modalDescription").text(`${restaurant.description__about_us}`);
+           $("#modalTime").html(`<span>🕒${restaurant.opening_time} to ${restaurant.closing_time}</span>`)
+           $("#modalAddress").text(`${restaurant.full_address}`);
+           $("#modalPhone").text(`${restaurant.contact_number}`);
+
+           const food_list = r.message.foods;
+           let rest_dishes = document.getElementById("restaurant-dishes");
+           rest_dishes.innerHTML = "";
+
+           food_list.forEach((res)=>{
+             const card_dish = `
+               <div class="col text-center p-2 position-relative food-item" onclick="increaseCount(this)">
+               <img src="${res.food_img}" id="img-count" class="rounded img-fluid mb-1 shadow" style="width: 100px; height: 100px; object-fit: cover;" alt="${res.food_name}" />
+                <span class="counter-badge">0</span>
+               <p class="fw-medium mb-3" id="food_name">${res.food_name}</p>
+               </div>
+             `;
+             rest_dishes.innerHTML += card_dish
+           })
+          
+        }
+      })
+    }
+    $("#closemodel").on('click', function(){
+        $("#modelImg").html('');
+        $("#restaurantModalLabel").text('')
+        $("#modalDescription").text('')
+        $("#modalTime").html('')
+        $("#modalAddress").text('')
+        $("#modalPhone").text('')
+    })
+
+    function formatTime(timeStr){
+        const [hours, minutes] = timeStr.split(':');
+        const hour = parseInt(hours);
+        const ampm = hour >= 12 ? "PM" : "AM";
+        const formattedHour = hour % 12 || 12;
+        return `${formattedHour}${ampm}`;
+    }
+   
+    function increaseCount(e1) {
+      const badge = e1.querySelector(".counter-badge");
+      const currentFoodName = e1.querySelector("p").textContent.trim();
+      let current = parseInt(badge.textContent);
+      badge.textContent = current + 1; 
+      totalcount += 1;
+      const totalBadge = document.querySelector(".total-badge");
+      if(totalBadge) {
+        totalBadge.textContent = totalcount;
+      }
+    }
+          const getCount = document.querySelector(".counter-badge").textContent.trim();
+           console.log(getCount);
+
+    
+    // rest_dishes.addEventListener("click", function(e) {
+    //   const foodItem = e.target.closest()
+    // })
+
+    // if(altText && badge) {
+    //     // frappe.call({
+    //     //   method:"frappe_new.frappe_new_title.doctype.halal_restaurant_details.halal_restaurant_details.get_restaurant_with_foods"
+    //     // })
+    // }
+    
+  </script>
+{% endblock %}

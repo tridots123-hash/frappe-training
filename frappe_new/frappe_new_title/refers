@@ -1551,3 +1551,776 @@ override_doctype_class = {
 override_doctype_class = {
     "News Article": "custom_app.overrides.news_article.CustomNewsArticle"
 }
+
+
+import frappe
+from frappe import _
+
+def execute(filters=None):
+    conditions = []
+    if filters.get("month"):
+        conditions.append(f"fee_month = '{filters.get('month')}'")
+    if filters.get("class"):
+        conditions.append(f"class = '{filters.get('class')}'")
+    if filters.get("status"):
+        conditions.append(f"status = '{filters.get('status')}'")
+
+    where_clause = " and ".join(conditions)
+    if where_clause:
+        where_clause = f"WHERE {where_clause}"
+
+    data = frappe.db.sql(f"""
+        SELECT 
+            fee_month, class, status, COUNT(name) as count
+        FROM `tabStd Fee Registration`
+        {where_clause}
+        GROUP BY fee_month, class, status
+    """, as_dict=1)
+
+    columns = [
+        {"label": _("Month"), "fieldname": "fee_month", "fieldtype": "Data", "width": 120},
+        {"label": _("Class"), "fieldname": "class", "fieldtype": "Data", "width": 120},
+        {"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 120},
+        {"label": _("Count"), "fieldname": "count", "fieldtype": "Int", "width": 100},
+    ]
+
+    return columns, data
+
+    import frappe
+
+@frappe.whitelist()
+def get_fee_summary(month=None, class_section=None, status=None):
+    filters = {}
+    if month:
+        filters["month"] = month
+    if class_section:
+        filters["class"] = class_section
+    if status:
+        filters["status"] = status
+
+    return frappe.get_all(
+        "Std Fee Registration",
+        filters=filters,
+        fields=["fee_month", "class", "status", "name"]
+    )
+
+
+
+    <!-- Add this to www/student_data_visualize.html -->
+<html>
+<head>
+    <title>Student Fee Summary</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="filters">
+        <select id="month-filter">
+            <option value="">Select Month</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <!-- Add all months -->
+        </select>
+
+        <select id="class-filter">
+            <option value="">Select Class</option>
+            <option value="10th-A">10th-A</option>
+            <option value="10th-B">10th-B</option>
+            <option value="10th-C">10th-C</option>
+        </select>
+
+        <select id="status-filter">
+            <option value="">All</option>
+            <option value="Paid">Paid</option>
+            <option value="Pending">Pending</option>
+            <option value="Cancel">Cancel</option>
+        </select>
+
+        <button onclick="fetchData()">Filter</button>
+    </div>
+
+    <canvas id="statusChart" width="600" height="300"></canvas>
+
+    <script>
+        function fetchData() {
+            const month = $('#month-filter').val();
+            const class_section = $('#class-filter').val();
+            const status = $('#status-filter').val();
+
+            frappe.call({
+                method: "frappe_new.frappe_new_title.api.fee_data.get_fee_summary",
+                args: { month, class_section, status },
+                callback: function (r) {
+                    const data = r.message;
+
+                    const statusCount = {
+                        Paid: 0,
+                        Pending: 0,
+                        Cancel: 0
+                    };
+
+                    data.forEach((row) => {
+                        statusCount[row.status] += 1;
+                    });
+
+                    renderChart(statusCount);
+                }
+            });
+        }
+
+        function renderChart(data) {
+            const ctx = document.getElementById('statusChart').getContext('2d');
+            if (window.bar !== undefined) window.bar.destroy();
+
+            window.bar = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Paid', 'Pending', 'Cancel'],
+                    datasets: [{
+                        label: 'Students Count',
+                        data: [data.Paid, data.Pending, data.Cancel],
+                        backgroundColor: ['green', 'orange', 'red']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            fetchData(); // Load on page
+        });
+    </script>
+</body>
+</html>
+
+
+const total = data.Paid + data.Pending + data.Cancel;
+
+const chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Paid', 'Pending', 'Cancel'],
+        datasets: [{
+            label: 'Student Count',
+            data: [data.Paid, data.Pending, data.Cancel],
+            backgroundColor: ['green', 'orange', 'red']
+        }]
+    },
+    options: {
+        plugins: {
+            datalabels: {
+                color: 'white',
+                anchor: 'center',
+                align: 'center',
+                font: {
+                    weight: 'bold',
+                    size: 14
+                },
+                formatter: function (value, context) {
+                    const percentage = ((value / total) * 100).toFixed(1);
+                    return `${value}\n(${percentage}%)`;
+                }
+            }
+        },
+        animation: {
+            duration: 1000,
+            easing: 'easeOutBounce'
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    },
+    plugins: [ChartDataLabels]
+});
+
+
+
+import frappe
+import re
+
+def show_restaurants():
+    def strip_html_tags(text):
+        return re.sub('<[^<]+?>', '', text) if text else ""
+
+    get_restaurants = frappe.db.get_all(
+        "Halal Restaurant Details",
+        fields=["name", "restaurant_name", "description__about_us", "opening_time", "closing_time", "restaurant_image"]
+    )
+
+    for restaurant in get_restaurants:
+        restaurant["description__about_us"] = strip_html_tags(restaurant.get("description__about_us"))
+
+    return get_restaurants
+
+
+
+import frappe
+import re
+from datetime import datetime
+
+def show_restaurants():
+    def strip_html_tags(text):
+        return re.sub('<[^<]+?>', '', text) if text else ""
+
+    def format_time(time_str):
+        if time_str:
+            return datetime.strptime(time_str, "%H:%M:%S").strftime("%-I%p")  # For Linux/Mac
+            # return datetime.strptime(time_str, "%H:%M:%S").strftime("%#I%p")  # For Windows
+        return ""
+
+    get_restaurants = frappe.db.get_all(
+        "Halal Restaurant Details",
+        fields=["name", "restaurant_name", "description__about_us", "opening_time", "closing_time", "restaurant_image"]
+    )
+
+    for restaurant in get_restaurants:
+        restaurant["description__about_us"] = strip_html_tags(restaurant.get("description__about_us"))
+        restaurant["opening_time"] = format_time(restaurant.get("opening_time"))
+        restaurant["closing_time"] = format_time(restaurant.get("closing_time"))
+
+    return get_restaurants
+
+
+    import re
+from datetime import datetime
+import frappe
+
+@frappe.whitelist()
+def show_restaurants():
+    def strip_html_tags(text):
+        return re.sub('<[^<]+?>', '', text) if text else ""
+
+    def format_time(time_val):
+        if time_val:
+            time_str = str(time_val)
+            return datetime.strptime(time_str, "%H:%M:%S").strftime("%-I%p")
+        return ""
+
+    get_restaurants = frappe.db.get_all(
+        "Halal Restaurant Details",
+        fields=["name", "restaurant_name", "description__about_us", "opening_time", "closing_time", "restaurant_image"]
+    )
+
+    for restaurant in get_restaurants:
+        restaurant["description__about_us"] = strip_html_tags(restaurant.get("description__about_us"))
+        restaurant["opening_time"] = format_time(restaurant.get("opening_time"))
+        restaurant["closing_time"] = format_time(restaurant.get("closing_time"))
+
+    return get_restaurants
+
+
+
+    import re
+import frappe
+from frappe.utils import format_time
+
+@frappe.whitelist()
+def show_restaurants():
+    def strip_html_tags(text):
+        return re.sub('<[^<]+?>', '', text) if text else ""
+
+    get_restaurants = frappe.db.get_all(
+        "Halal Restaurant Details",
+        fields=["name", "restaurant_name", "description__about_us", "opening_time", "closing_time", "restaurant_image"]
+    )
+
+    for restaurant in get_restaurants:
+        restaurant["description__about_us"] = strip_html_tags(restaurant.get("description__about_us"))
+        restaurant["opening_time"] = format_time(restaurant.get("opening_time"))
+        restaurant["closing_time"] = format_time(restaurant.get("closing_time"))
+
+    return get_restaurants
+
+
+<div class="container mt-4">
+  <div id="restaurant-list" class="d-flex flex-column align-items-center gap-4"></div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", fetchRestaurants);
+
+  function fetchRestaurants() {
+    frappe.call({
+      method: "frappe_new.frappe_new_title.doctype.halal_restaurant_details.halal_restaurant_details.show_restaurants"
+    }).then((r) => {
+      const restaurants = r.message;
+      const container = document.getElementById("restaurant-list");
+      container.innerHTML = "";
+
+      restaurants.forEach((res) => {
+        const card = `
+          <div class="card mb-3 shadow-sm" style="max-width: 700px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="${res.restaurant_image}" class="img-fluid h-100" alt="${res.restaurant_name}" style="padding: 7px; border-radius: 0.75rem;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <h5 class="card-title mb-1">${res.restaurant_name}</h5>
+                    <span class="badge bg-success-subtle text-success-emphasis rounded-pill">
+                      ${res.opening_time} - ${res.closing_time}
+                    </span>
+                  </div>
+                  <p class="card-text mb-1">${res.description__about_us}</p>
+                  <p class="card-text">
+                    <small class="text-body-secondary">
+                      <i class="bi bi-patch-check-fill me-1"></i>Certified
+                    </small>
+                  </p>
+                  <a href="#" class="btn btn-primary mt-2">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        container.innerHTML += card;
+      });
+    });
+  }
+</script>
+
+
+
+import frappe
+
+# Get the full URL of a specific document
+doctype = "DocTypeName"  # Replace with your DocType
+docname = "DocumentName"  # Replace with your document name
+url = frappe.utils.get_url(f"/app/{doctype}/{docname}")
+frappe.utils.get_url() + restaurant['restaurant_image']
+print(url)  # Outputs the full URL
+
+
+
+<script>
+  function formatTime(timeStr) {
+    const [hours, minutes] = timeStr.split(':');
+    const hour = parseInt(hours);
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const formattedHour = hour % 12 || 12;
+    return `${formattedHour}${ampm}`;
+  }
+
+  const open = formatTime(res.opening_time);  // "9PM"
+  const close = formatTime(res.closing_time); // "10PM"
+  document.querySelector("#your-span-id").innerHTML =
+    `<span class="badge bg-success-subtle text-success-emphasis rounded-pill">${open} - ${close}</span>`;
+</script>
+
+
+
+
+@frappe.whitelist()
+def get_restaurant_data(restaurant_name):
+    # Get parent restaurant info
+    restaurant = frappe.db.get_value(
+        "Halal Restaurant",
+        restaurant_name,
+        ["restaurant_name", "description", "address", "phone_number", "opening_time", "closing_time"],
+        as_dict=True
+    )
+
+    # Get child table food list
+    food_list = frappe.db.sql("""
+        SELECT food_name, food_image
+        FROM `tabFood List`
+        WHERE parent = %s
+    """, (restaurant_name,), as_dict=True)
+
+    # Combine and return both
+    return {
+        "restaurant": restaurant,
+        "foods": food_list
+    }
+
+
+    @frappe.whitelist()
+def get_restaurant_with_foods(restaurant_name):
+    data = frappe.db.sql("""
+        SELECT 
+            r.name AS restaurant_id,
+            r.restaurant_name,
+            r.description,
+            r.address,
+            r.phone_number,
+            r.opening_time,
+            r.closing_time,
+            f.food_name,
+            f.food_image
+        FROM `tabHalal Restaurant` r
+        LEFT JOIN `tabFood List` f ON r.name = f.parent
+        WHERE r.restaurant_name = %s
+    """, (restaurant_name,), as_dict=True)
+
+    return data
+
+
+
+    for food in food_list:
+    if food.get("food_img"):  # ensures it's not None or empty
+        food["food_img"] = frappe.utils.get_url() + food["food_img"]
+
+
+
+         .modal-content {
+    position: relative;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-bottom: 80px; /* space for icon */
+  }
+
+  .add-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .add-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .add-icon i {
+    font-size: 24px;
+    color: #28a745;
+  }
+
+
+
+  <div class="col text-center p-2 position-relative food-item" onclick="increaseCount(this)">
+  <img src="${res.food_img}" class="rounded img-fluid mb-1 shadow" style="width: 100px; height: 100px; object-fit: cover;" alt="${res.food_name}" />
+  
+  <!-- Counter Badge -->
+  <span class="counter-badge">0</span>
+
+  <p class="fw-medium mb-3">${res.food_name}</p>
+</div>
+
+
+<script>
+  function increaseCount(el) {
+    const badge = el.querySelector(".counter-badge");
+    let current = parseInt(badge.textContent);
+    badge.textContent = current + 1;
+  }
+</script>
+
+
+.food-item {
+  position: relative;
+}
+
+.counter-badge {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: #28a745;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none; /* So click still goes to the image */
+}
+
+
+.add-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.add-icon:hover {
+  transform: scale(1.1);
+}
+
+.add-icon i {
+  font-size: 24px;
+  color: #28a745;
+  position: relative;
+}
+
+/* 👇 THIS is the badge on top-right */
+.total-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #28a745;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+let totalCount = 0;
+
+function increaseCount(element) {
+  // 1. Update individual counter-badge
+  const itemBadge = element.querySelector(".counter-badge");
+  let current = parseInt(itemBadge.textContent);
+  itemBadge.textContent = current + 1;
+
+  // 2. Update total badge
+  totalCount += 1;
+  const totalBadge = document.querySelector(".total-badge");
+  if (totalBadge) {
+    totalBadge.textContent = totalCount;
+  }
+}
+
+
+<script>
+const element = document.getElementById("myH1"); 
+let text = element.getAttribute("class"); 
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+
+function increaseCount(e1) {
+  // Get the image element inside the clicked food-item
+  const img = e1.querySelector("img");
+
+  // Get the alt attribute
+  const altText = img.getAttribute("alt");
+
+  // Log it or use it
+  console.log("Food Name:", altText);
+}
+
+
+
+const foodName = e1.querySelector("p").textContent.trim();
+console.log("Food Name from P tag:", foodName);
+
+
+function increaseCount(e1) {
+  // Get <p> text (e.g., "Chicken Kebab × 2")
+  const p = e1.querySelector("p");
+  let fullText = p.textContent.trim();
+
+  // Split by "×"
+  let [foodName, countText] = fullText.split("×").map(part => part.trim());
+
+  // Parse count (if it exists), else default to 0
+  let currentCount = parseInt(countText) || 0;
+
+  // Increase count
+  currentCount += 1;
+
+  // Update the <p> text
+  p.textContent = `${foodName} × ${currentCount}`;
+
+  // ✅ Optional: Also update total badge
+  const totalBadge = document.querySelector(".total-badge");
+  if (totalBadge) {
+    let totalCount = parseInt(totalBadge.textContent) || 0;
+    totalBadge.textContent = totalCount + 1;
+  }
+}
+
+
+HasRole = frappe.qb.DocType('Has Role')
+CustomRole = frappe.qb.DocType('Custom Role')
+
+query = (frappe.qb.from_(HasRole)
+ .inner_join(CustomRole)
+ .on(CustomRole.name == HasRole.parent)
+ .select(CustomRole.page, HasRole.parent, HasRole.role))
+
+
+ from frappe.query_builder import DocType
+
+
+
+ import frappe
+from frappe.query_builder import DocType
+from pypika.terms import Criterion
+from frappe.utils import get_url, strip_html_tags
+
+@frappe.whitelist()
+def get_restaurant_with_foods(restaurant_name):
+    HalalRestaurant = DocType("Halal Restaurant Details")
+    HalalFoodList = DocType("Halal Food List")
+
+    # Restaurant info using QB
+    restaurant_data = (
+        frappe.qb
+        .from_(HalalRestaurant)
+        .select(
+            HalalRestaurant.name,
+            HalalRestaurant.restaurant_name,
+            HalalRestaurant.description__about_us,
+            HalalRestaurant.opening_time,
+            HalalRestaurant.closing_time,
+            HalalRestaurant.restaurant_image,
+            HalalRestaurant.full_address,
+            HalalRestaurant.contact_number
+        )
+        .where(HalalRestaurant.name == restaurant_name)
+    ).run(as_dict=True)
+
+    restaurant = restaurant_data[0] if restaurant_data else None
+
+    # Food list using QB
+    food_list = (
+        frappe.qb
+        .from_(HalalFoodList)
+        .select(
+            HalalFoodList.food_name,
+            HalalFoodList.food_img
+        )
+        .where(HalalFoodList.parent == restaurant_name)
+    ).run(as_dict=True)
+
+    # Processing results
+    if restaurant:
+        restaurant["description__about_us"] = strip_html_tags(restaurant.get("description__about_us") or "")
+        if restaurant.get("restaurant_image"):
+            restaurant["restaurant_image"] = get_url() + restaurant["restaurant_image"]
+
+    for food in food_list:
+        if food.get("food_img"):
+            food["food_img"] = get_url() + food["food_img"]
+
+    return {
+        "restaurant": restaurant,
+        "foods": food_list
+    }
+
+
+    // JS Logic
+const clickCounts = {}; // key: foodName, value: count
+
+function increaseCount(e1) {
+  const foodName = e1.querySelector("p").textContent.trim();
+
+  // Initialize count if not exists
+  if (!clickCounts[foodName]) {
+    clickCounts[foodName] = 0;
+  }
+
+  // Increment count
+  clickCounts[foodName]++;
+
+  // Update count in DOM
+  e1.querySelector(".count").textContent = clickCounts[foodName];
+
+  console.log(`${foodName} clicked ${clickCounts[foodName]} times`);
+}
+
+
+
+<div id="rest_dishes" class="row"></div>
+
+<script>
+  const food_list = [
+    { food_name: "Pizza", food_img: "pizza.jpg" },
+    { food_name: "Burger", food_img: "burger.jpg" },
+    { food_name: "Fries", food_img: "fries.jpg" },
+  ];
+
+  const clickCounts = {}; // 👈 To store click counts by food_name
+
+  const rest_dishes = document.getElementById("rest_dishes");
+
+  food_list.forEach((res) => {
+    // Initialize click count for this food
+    clickCounts[res.food_name] = 0;
+
+    const card_dish = `
+      <div class="col text-center p-2 position-relative food-item" data-food="${res.food_name}">
+        <img src="${res.food_img}" class="rounded img-fluid mb-1 shadow" style="width: 100px; height: 100px; object-fit: cover;" alt="${res.food_name}" />
+        <span class="counter-badge">0</span>
+        <p class="fw-medium mb-3">${res.food_name}</p>
+      </div>
+    `;
+    rest_dishes.innerHTML += card_dish;
+  });
+
+  // 🔁 Handle all clicks on food items
+  rest_dishes.addEventListener("click", function (e) {
+    const foodItem = e.target.closest(".food-item");
+    if (!foodItem) return;
+
+    const foodName = foodItem.getAttribute("data-food");
+
+    // 🔢 Increment count
+    clickCounts[foodName]++;
+
+    // 🖊️ Update UI
+    const badge = foodItem.querySelector(".counter-badge");
+    badge.textContent = clickCounts[foodName];
+
+    // 📤 Optional: Send to backend (example)
+    // sendClickData(foodName, clickCounts[foodName]);
+  });
+
+  // Example backend send function
+  function sendClickData(foodName, count) {
+    fetch("/api/save-clicks", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ food_name: foodName, click_count: count }),
+    })
+    .then(res => res.json())
+    .then(data => console.log("Saved:", data))
+    .catch(err => console.error("Error saving:", err));
+  }
+</script>
+
+
+
+const foodItems = document.querySelectorAll('.food-item');
+
+foodItems.forEach(item => {
+  const foodName = item.getAttribute('data-food');
+  const count = item.querySelector('.counter-badge').textContent.trim();
+
+  // Send to backend (example using fetch)
+  fetch('/your-backend-api', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      food_name: foodName,
+      count: parseInt(count)
+    })
+  });
+});
