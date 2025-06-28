@@ -1,0 +1,5 @@
+2025-06-26 13:43:35,060 INFO ipython === bench console session ===
+2025-06-26 13:43:35,060 INFO ipython frappe.get_all("Module Def", filters={"name": "frappe-new-title"})
+2025-06-26 13:43:35,060 INFO ipython frappe.delete_doc("Module Def", "frappe-new-title", force=1)
+frappe.db.commit()
+2025-06-26 13:43:35,061 INFO ipython === session end ===

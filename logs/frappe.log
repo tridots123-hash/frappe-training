@@ -1,0 +1,132 @@
+2025-06-27 13:47:19,136 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doc': '{"doctype":"DocType","name":"Company Details","module":"frappe-new-title","is_submittable":1,"editable_grid":0,"is_tree":0,"custom":0,"is_virtual":0,"permissions":[{"create":1,"delete":1,"email":1,"export":1,"print":1,"read":1,"report":1,"role":"System Manager","share":1,"write":1,"submit":1}],"fields":[{"fieldtype":"Section Break"}]}', 'cmd': 'frappe.client.insert'}
+2025-06-27 13:51:37,336 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'docs': '{"name":"Company Details","creation":"2025-06-27 19:17:18.460066","modified":"2025-06-27 19:17:18.460066","modified_by":"Administrator","owner":"Administrator","docstatus":0,"idx":0,"issingle":0,"is_virtual":0,"is_tree":0,"istable":0,"editable_grid":0,"track_changes":0,"module":"frappe-new-title","naming_rule":"","sort_field":"modified","sort_order":"DESC","read_only":0,"in_create":0,"allow_copy":0,"allow_rename":1,"allow_import":0,"hide_toolbar":0,"track_seen":0,"max_attachments":0,"document_type":"","engine":"InnoDB","is_submittable":1,"show_name_in_global_search":0,"custom":0,"beta":0,"has_web_view":0,"allow_guest_to_view":0,"email_append_to":0,"show_title_field_in_link":0,"translated_doctype":0,"is_calendar_and_gantt":0,"quick_entry":0,"grid_page_length":50,"track_views":0,"queue_in_background":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"force_re_route_to_default_view":0,"show_preview_popup":0,"protect_attached_files":0,"index_web_pages_for_search":1,"row_format":"Dynamic","doctype":"DocType","actions":[],"fields":[{"name":"i815c1akn2","creation":"2025-06-27 19:17:18.460066","modified":"2025-06-27 19:17:18.460066","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"Company Details","parentfield":"fields","parenttype":"DocType","idx":1,"fieldname":"section_break_5bfr","fieldtype":"Section Break","search_index":0,"show_dashboard":0,"hidden":0,"set_only_once":0,"allow_in_quick_entry":0,"print_hide":0,"report_hide":0,"reqd":0,"bold":0,"in_global_search":0,"collapsible":0,"unique":0,"no_copy":0,"allow_on_submit":0,"show_preview_popup":0,"permlevel":0,"ignore_user_permissions":0,"columns":0,"in_list_view":0,"fetch_if_empty":0,"in_filter":0,"remember_last_selected_value":0,"ignore_xss_filter":0,"print_hide_if_no_value":0,"allow_bulk_edit":0,"in_standard_filter":0,"in_preview":0,"read_only":0,"precision":"","length":0,"translatable":0,"hide_border":0,"hide_days":0,"hide_seconds":0,"non_negative":0,"is_virtual":0,"sort_options":0,"show_on_timeline":0,"make_attachment_public":0,"doctype":"DocField"},{"name":"i81eege06i","creation":"2025-06-27 19:17:18.568468","modified":"2025-06-27 19:17:18.568468","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"Company Details","parentfield":"fields","parenttype":"DocType","idx":2,"fieldname":"amended_from","label":"Amended From","fieldtype":"Link","options":"Company Details","search_index":1,"show_dashboard":0,"hidden":0,"set_only_once":0,"allow_in_quick_entry":0,"print_hide":1,"report_hide":0,"reqd":0,"bold":0,"in_global_search":0,"collapsible":0,"unique":0,"no_copy":1,"allow_on_submit":0,"show_preview_popup":0,"permlevel":0,"ignore_user_permissions":0,"columns":0,"in_list_view":0,"fetch_if_empty":0,"in_filter":0,"remember_last_selected_value":0,"ignore_xss_filter":0,"print_hide_if_no_value":0,"allow_bulk_edit":0,"in_standard_filter":0,"in_preview":0,"read_only":1,"length":0,"translatable":0,"hide_border":0,"hide_days":0,"hide_seconds":0,"non_negative":0,"is_virtual":0,"sort_options":0,"show_on_timeline":0,"make_attachment_public":0,"doctype":"DocField"}],"links":[],"states":[],"permissions":[{"name":"i81ich8ke9","creation":"2025-06-27 19:17:18.460066","modified":"2025-06-27 19:17:18.460066","modified_by":"Administrator","owner":"Administrator","docstatus":0,"parent":"Company Details","parentfield":"permissions","parenttype":"DocType","idx":1,"permlevel":0,"role":"System Manager","read":1,"write":1,"create":1,"submit":1,"cancel":0,"delete":1,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"if_owner":0,"select":0,"doctype":"DocPerm"}],"__last_sync_on":"2025-06-27T13:51:36.732Z"}', 'method': 'check_pending_migration', 'cmd': 'run_doc_method'}
+2025-06-27 14:00:54,350 ERROR frappe Error while inserting deferred Error Log record: Error Log q6vm0d9blk: '<strong>Title</strong>' ([Errno 2] No such file or directory: '/home/tridotstech/frappe-training/apps/frappe_new/frappe_new/frappe_new_title/doctype/company_details/company_details.json') will get truncated, as max characters allowed is 140
+Site: apple.local
+Form Dict: {}
+2025-06-28 10:16:10,104 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'data_import': 'Class Records Import on 2025-06-28 15:25:05.194625', 'google_sheets_url': 'https://docs.google.com/spreadsheets/d/1e0YEleBypGwo7XTOKwBCMVrB1ZUHA7GqYD14dDxKE8M/edit?gid=390285673#gid=390285673', 'cmd': 'frappe.core.doctype.data_import.data_import.get_preview_from_template'}
+2025-06-28 10:18:16,595 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'data_import': 'Class Records Import on 2025-06-28 15:25:05.194625', 'import_file': '/private/files/Untitled spreadsheet - Google Sheets.html', 'google_sheets_url': '', 'cmd': 'frappe.core.doctype.data_import.data_import.get_preview_from_template'}
+2025-06-28 10:19:56,564 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'data_import': 'Class Records Import on 2025-06-28 15:25:05.194625', 'import_file': '/private/files/Untitled spreadsheet (2).xlsx', 'google_sheets_url': '', 'cmd': 'frappe.core.doctype.data_import.data_import.get_preview_from_template'}
+2025-06-28 10:20:04,864 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'data_import': 'Class Records Import on 2025-06-28 15:25:05.194625', 'google_sheets_url': 'https://docs.google.com/spreadsheets/d/1e0YEleBypGwo7XTOKwBCMVrB1ZUHA7GqYD14dDxKE8M/edit?gid=390285673#gid=390285673', 'cmd': 'frappe.core.doctype.data_import.data_import.get_preview_from_template'}
+2025-06-28 10:30:50,098 ERROR frappe Error while inserting deferred Error Log record: Error Log as43ova2dg: 'Title' (401 Client Error: Unauthorized for url: https://docs.google.com/spreadsheets/d/1e0YEleBypGwo7XTOKwBCMVrB1ZUHA7GqYD14dDxKE8M/export?format=csv&gid=390285673) will get truncated, as max characters allowed is 140
+Site: apple.local
+Form Dict: {}
+2025-06-28 10:30:50,100 ERROR frappe Error while inserting deferred Error Log record: Error Log as559fk5km: 'Title' (401 Client Error: Unauthorized for url: https://docs.google.com/spreadsheets/d/1e0YEleBypGwo7XTOKwBCMVrB1ZUHA7GqYD14dDxKE8M/export?format=csv&gid=390285673) will get truncated, as max characters allowed is 140
+Site: apple.local
+Form Dict: {}
+2025-06-28 10:30:50,102 ERROR frappe Error while inserting deferred Error Log record: Error Log as5cuaa63o: 'Title' (401 Client Error: Unauthorized for url: https://docs.google.com/spreadsheets/d/1e0YEleBypGwo7XTOKwBCMVrB1ZUHA7GqYD14dDxKE8M/export?format=csv&gid=390285673) will get truncated, as max characters allowed is 140
+Site: apple.local
+Form Dict: {}
+2025-06-28 10:30:50,103 ERROR frappe Error while inserting deferred Error Log record: Error Log as54lfkn8v: 'Title' (401 Client Error: Unauthorized for url: https://docs.google.com/spreadsheets/d/1e0YEleBypGwo7XTOKwBCMVrB1ZUHA7GqYD14dDxKE8M/export?format=csv&gid=390285673) will get truncated, as max characters allowed is 140
+Site: apple.local
+Form Dict: {}
+2025-06-28 10:39:26,890 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 10:41:46,532 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 10:42:50,158 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 10:56:33,932 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 10:58:29,968 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 10:59:16,825 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:08:22,258 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:10:06,559 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doc': '{"name":3,"owner":"Administrator","creation":"2025-06-28 15:50:55.613760","modified":"2025-06-28 15:52:46.875312","modified_by":"Administrator","docstatus":0,"idx":0,"class_name":"10th","class_section":"A-sec","student_name":"M.Mohammed Imran","student_email":"imranameen045@gmail.com","phone_no":896756788,"doctype":"Class Records","student_amount":[{"name":"AMT-005","owner":"Administrator","creation":"2025-06-28 15:50:55.613760","modified":"2025-06-28 15:52:46.875312","modified_by":"Administrator","docstatus":0,"idx":1,"total_amount":10000,"total_gst":18,"month":"2025-06-28","parent":3,"parentfield":"student_amount","parenttype":"Class Records","doctype":"Student Amount Records"},{"name":"AMT-006","owner":"Administrator","creation":"2025-06-28 15:50:55.613760","modified":"2025-06-28 15:52:46.875312","modified_by":"Administrator","docstatus":0,"idx":2,"total_amount":20000,"total_gst":18,"month":"2025-06-29","parent":3,"parentfield":"student_amount","parenttype":"Class Records","doctype":"Student Amount Records"},{"name":"AMT-007","owner":"Administrator","creation":"2025-06-28 15:50:55.613760","modified":"2025-06-28 15:52:46.875312","modified_by":"Administrator","docstatus":0,"idx":3,"total_amount":30000,"total_gst":18,"month":"2025-06-29","parent":3,"parentfield":"student_amount","parenttype":"Class Records","doctype":"Student Amount Records"}],"__last_sync_on":"2025-06-28T11:02:11.494Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-06-28 11:10:30,165 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:35:20,501 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:37:16,773 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:37:30,602 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:43:54,591 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:44:06,829 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:48:01,481 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:48:21,163 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:49:20,938 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:49:51,125 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:50:02,544 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:52:48,841 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 11:54:27,716 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 12:14:27,673 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 12:15:37,770 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 12:16:20,758 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 12:16:46,440 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 12:17:35,371 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 12:29:35,881 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 13:01:41,722 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'name': '5', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-06-28 13:56:03,282 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 14:12:19,456 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'name': 'new-class-records-htliwebgry', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-06-28 14:12:48,669 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 14:13:29,275 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-28 14:15:42,415 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
