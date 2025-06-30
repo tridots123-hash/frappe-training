@@ -1,15 +1,10 @@
 [
-    "tabDocPerm",
-    "tabSingles",
-    "tabInstalled Application",
-    "tabNews",
-    "tabCompany Details",
-    "tabTag",
-    "tabDocField",
-    "tabNews Alert",
-    "tabCompany",
+    "tabDocType Action",
+    "tabDocType Link",
     "tabTag Link",
+    "tabDocPerm",
+    "tabTag",
     "tabDocType",
-    "tabVersion",
-    "tabInstalled"
+    "tabDocType State",
+    "tabDocField"
 ]

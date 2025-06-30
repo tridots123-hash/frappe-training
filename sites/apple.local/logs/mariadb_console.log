@@ -16,3 +16,10 @@ select\040*\040from\040`tabCompany\040Details`;
 select\040*\040from\040`tabClass\040Records`;
 TRUNCATE\040`tabClass\040Records`;
 select\040*\040from\040`tabClass\040Records`;
+select\040*\040from\040`tabStudent\040Amount\040Records`;
+\040SELECT\040`class_name`,COUNT(`class_name`)\040`total_students_in_section`\040FROM\040`tabClass\040Records`\040WHERE\040`class_name`\040NOT\040IN\040('10th','11th')\040GROUP\040BY\040`class_name`
+\040SELECT\040`class_name`,COUNT(`class_name`)\040`total_students_in_section`\040FROM\040`tabClass\040Records`\040WHERE\040`class_name`\040NOT\040IN\040('10th','11th')\040GROUP\040BY\040`class_name`;
+\040SELECT\040`class_name`,COUNT(`class_name`)\040`total_students_in_section`\040FROM\040`tabClass\040Records`\040WHERE\040`class_name`\040IN\040('10th','11th')\040GROUP\040BY\040`class_name`;
+MariaDB\040[_ca0c115774fd5149]>\040\040SELECT\040`class_name`,COUNT(`class_name`)\040`total_students_in_section`\040FROM\040`tabClass\040Records`\040WHERE\040`class_name`\040NOT\040IN\040('10th','11th')\040GROUP\040BY\040`class_name`
+SELECT\040`class_name`,COUNT(`class_name`)\040`total_students_in_section`\040FROM\040`tabClass\040Records`\040WHERE\040`class_name`\040NOT\040IN\040('10th','11th')\040GROUP\040BY\040`class_name`;
+\040SELECT\040`name`,`class_name`,`student_name`,`student_email`\040FROM\040`tabClass\040Records`\040LIMIT\0405;

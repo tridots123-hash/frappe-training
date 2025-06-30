@@ -130,3 +130,102 @@ Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': 
 2025-06-28 14:15:42,415 ERROR frappe New Exception collected in error log
 Site: apple.local
 Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 07:21:03,904 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 07:27:49,656 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 07:29:16,717 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 07:29:45,478 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 07:48:35,145 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 08:28:37,058 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 09:08:30,368 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 09:09:06,346 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 09:23:08,046 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-28 15:24:43.107538', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 09:32:31,115 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 14:54:54.381506', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 09:32:54,759 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 14:54:54.381506', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 09:51:08,911 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'name': '3', 'cmd': 'frappe.desk.form.load.getdoc'}
+2025-06-30 10:21:30,204 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 15:13:06.287021', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:28:37,090 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 15:53:06.977470', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:29:01,540 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 15:53:06.977470', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:39:35,780 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 15:53:06.977470', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:40:15,616 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 15:53:06.977470', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:40:52,980 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 15:53:06.977470', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:43:18,103 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 15:53:06.977470', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:48:34,079 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:49:05,276 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 10:49:21,794 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:27:52,612 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:31:35,352 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:32:25,942 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:33:09,837 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:33:38,652 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:34:03,580 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:34:30,343 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:34:49,946 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:43:21,577 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:45:43,748 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}
+2025-06-30 11:46:41,381 ERROR frappe New Exception collected in error log
+Site: apple.local
+Form Dict: {'doctype': 'Class Records', 'with_parent': '1', 'cached_timestamp': '2025-06-30 16:14:31.959780', 'cmd': 'frappe.desk.form.load.getdoctype'}

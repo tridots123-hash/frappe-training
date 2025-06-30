@@ -1,4 +1,4 @@
-2025-06-28 08:02:18,509 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:24:46,826 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -42,7 +42,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:03:18,617 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:25:46,927 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -86,7 +86,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:04:18,640 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:26:47,030 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -130,7 +130,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:05:18,818 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:27:47,211 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -174,7 +174,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:06:18,838 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:28:47,220 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -218,7 +218,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:07:19,060 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:29:47,323 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -262,7 +262,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:08:19,225 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:30:47,419 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -306,7 +306,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:09:19,327 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:31:47,549 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -350,7 +350,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:10:19,449 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:32:47,654 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -394,7 +394,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:11:19,472 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:33:47,834 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -438,7 +438,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:12:19,648 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:34:47,925 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -482,7 +482,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:13:19,663 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:35:47,934 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -526,7 +526,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:14:19,777 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:36:48,031 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -570,7 +570,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:15:19,908 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:37:48,188 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -614,7 +614,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:16:20,096 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:38:48,283 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -658,7 +658,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:17:20,113 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:39:48,289 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -702,7 +702,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:18:20,371 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:40:48,391 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -746,7 +746,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:19:20,480 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:41:48,506 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -790,7 +790,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:20:20,588 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:42:48,631 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -834,7 +834,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:21:20,596 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:43:48,880 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -878,7 +878,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:22:20,943 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:44:48,961 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -922,7 +922,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:23:20,954 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:45:49,170 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -966,7 +966,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:24:21,075 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:46:49,280 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1010,7 +1010,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:25:21,455 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:47:49,381 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1054,7 +1054,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:26:21,574 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:48:49,472 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1098,7 +1098,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:27:21,588 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:49:49,489 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1142,7 +1142,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:28:21,826 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:50:49,592 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1186,7 +1186,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:29:22,056 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:51:49,786 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1230,7 +1230,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:30:22,069 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:52:49,881 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1274,7 +1274,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:31:22,189 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:53:49,960 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1318,7 +1318,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
-2025-06-28 08:32:22,283 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+2025-06-28 13:54:49,975 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():

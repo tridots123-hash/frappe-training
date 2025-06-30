@@ -1,4 +1,532 @@
-2025-06-28 10:03:46,209 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-28 14:24:53,178 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:25:53,276 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:26:53,293 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:27:53,393 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:28:53,553 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:29:53,710 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:30:53,722 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:31:53,848 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:32:53,981 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:33:54,363 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:34:54,373 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-28 14:35:54,537 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:17:34,479 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -42,7 +570,51 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:04:46,363 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:17:34,692 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:18:34,702 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -86,7 +658,95 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:05:46,371 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:18:34,781 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:19:34,789 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:19:34,873 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -130,7 +790,51 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:06:46,462 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:20:34,877 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:20:34,939 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -174,7 +878,51 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:07:46,563 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:21:34,948 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:21:34,958 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -218,7 +966,51 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:08:46,696 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:22:35,043 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:22:35,045 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -262,7 +1054,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:09:46,706 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:23:35,104 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -306,7 +1098,51 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:10:46,781 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:23:35,108 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:24:35,265 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -350,7 +1186,51 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:11:46,895 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:24:35,267 ERROR scheduler Exception in Enqueue Events for Site dcode.com
+Traceback (most recent call last):
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
+    self._request_authentication()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
+    auth_packet = self._read_packet()
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:25:35,316 ERROR scheduler Exception in Enqueue Events for Site newsite.local
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -394,7 +1274,7 @@ Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:12:47,028 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+2025-06-30 07:25:35,318 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -437,8 +1317,8 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:13:47,040 ERROR scheduler Exception in Enqueue Events for Site newsite.local
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
+2025-06-30 07:26:35,327 ERROR scheduler Exception in Enqueue Events for Site dcode.com
 Traceback (most recent call last):
   File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -481,884 +1361,4 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
     raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:14:47,120 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:15:47,227 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:16:47,296 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:17:47,389 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:18:47,399 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:19:47,552 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:20:47,641 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:21:47,695 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:22:47,703 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:23:47,873 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:24:47,933 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:25:47,944 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:26:48,027 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:27:48,079 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:28:48,132 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:29:48,250 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:30:48,364 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:31:48,451 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:32:48,505 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
-2025-06-28 10:33:48,518 ERROR scheduler Exception in Enqueue Events for Site newsite.local
-Traceback (most recent call last):
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 837, in get_single_value
-    ).run()
-      ^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 207, in sql
-    self.connect()
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/database.py", line 112, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-                                                             ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
-    conn = self._get_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
-    return self.create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
-    self.connect()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 669, in connect
-    self._request_authentication()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 957, in _request_authentication
-    auth_packet = self._read_packet()
-                  ^^^^^^^^^^^^^^^^^^^
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
-    packet.raise_for_error()
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/tridotstech/frappe-training/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_4241396ccc580824'@'localhost' (using password: YES)")
+pymysql.err.OperationalError: (1045, "Access denied for user '_a52a7ba7e002e321'@'localhost' (using password: YES)")
