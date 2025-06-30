@@ -1,2 +1,0 @@
-frappe
-frappe_new
