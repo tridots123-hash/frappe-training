@@ -354,3 +354,5 @@ class ClassRecords(Document):
 
 	queries = query.run(as_dict=True)
 	print("QB Output:", queries)
+
+# --------------------------------------------------------------------------------------
