@@ -2324,3 +2324,78 @@ foodItems.forEach(item => {
     })
   });
 });
+
+
+
+from frappe.query_builder import DocType
+from frappe.query_builder.functions import Avg, Abs
+
+class_records = DocType("Class Records")
+student_amount = DocType("Student Amount Records")
+
+query = (
+    frappe.qb.from_(class_records)
+    .join(student_amount)
+    .on(class_records.name == student_amount.parent)
+    .groupby(class_records.student_name)
+    .select(
+        class_records.student_name,
+        Abs(Avg(student_amount.total_amount)).as_("abs_avg_amount")
+    )
+)
+
+result = query.run(as_dict=True)
+print(result)
+
+
+     class_records = frappe.qb.DocType("Class Records")
+     
+     query = (
+        frappe.qb.from_(class_records)
+        .select(class_name, class_section, student_name, student_email, phone_no)
+        .where(class_records.name =="5")
+     )           
+	 
+	 queries = query.run(as_dict=True)
+     print("QB Output:", queries)
+
+
+
+     from frappe.query_builder import functions as fn
+
+class_records = frappe.qb.DocType("Class Records")
+
+query = (
+	frappe.qb.from_(class_records)
+	.select(
+		class_records.class_name,
+		class_records.student_name,
+		fn.Ifnull(class_records.student_email, "no_email").as_("student_email_id")
+	)
+	.where(class_records.name == "5")
+)
+
+queries = query.run(as_dict=True)
+print("QB Output:", queries)
+
+
+
+from frappe.query_builder import functions as fn
+
+class_records = frappe.qb.DocType("Class Records")
+
+query = (
+	frappe.qb.from_(class_records)
+	.select(
+		fn.Concat(
+			class_records.student_name,
+			" (",
+			class_records.class_name,
+			")"
+		).as_("student_display_name")
+	)
+	.where(class_records.name == "5")
+)
+
+result = query.run(as_dict=True)
+print("QB Output:", result)

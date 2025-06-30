@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "autoname": "autoincrement",
  "creation": "2025-06-24 18:38:13.946623",
  "doctype": "DocType",
@@ -11,13 +12,19 @@
   "student_email",
   "phone_no",
   "student_amount",
-  "subject_records"
+  "subject_records",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_class_records"
  ],
  "fields": [
   {
    "fieldname": "class_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Class Name",
    "reqd": 1
   },
@@ -56,16 +63,52 @@
    "fieldtype": "Link",
    "label": "Subject Records",
    "options": "Subjects"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Class Records"
+  },
+  {
+   "fieldname": "parent_class_records",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent Class Records",
+   "options": "Class Records"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-25 18:39:27.122301",
+ "modified": "2025-06-30 16:14:31.959780",
  "modified_by": "Administrator",
  "module": "frappe-new-title",
  "name": "Class Records",
  "naming_rule": "Autoincrement",
+ "nsm_parent_field": "parent_class_records",
  "owner": "Administrator",
  "permissions": [
   {
