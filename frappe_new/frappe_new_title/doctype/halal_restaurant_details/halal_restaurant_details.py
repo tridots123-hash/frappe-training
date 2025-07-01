@@ -9,8 +9,7 @@ from frappe.query_builder import DocType
 from pypika.terms import Criterion
 
 class HalalRestaurantDetails(Document):
-	pass
-
+    pass
 def strip_html_tags(text):
     return re.sub('<[^<]+?>', '', text) if text else ""
 

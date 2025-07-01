@@ -17,6 +17,7 @@ from frappe.model.document import Document
 
 
 class ClassRecords(Document):
+	
 	# query = frappe.qb.get_query("Class Records")
 	# queries = query.run(as_dict=True)
 	# print("QB Output:",queries)
@@ -340,19 +341,28 @@ class ClassRecords(Document):
 	# queries = query.run(as_dict=True)
 	# print("QB Output:", queries)
 # --------------------------------------------------------------------------------------
-    class_records = frappe.qb.DocType("Class Records").Distinct()
+	# class_records = frappe.qb.DocType("Class Records")
 
-	query = (
-		frappe.qb.from_(class_records)
-		.select(
-			class_records.name,
-			class_records.class_name,
-			class_records.student_name,
-			class_records.student_email
-		)
-	)
+	# query = (
+	# 	frappe.qb.from_(class_records)
+	# 	.distinct()
+	# 	.select(
+	# 		class_records.class_name,
+	# 		class_records.student_name,
+	# 		class_records.student_email
+	# 	)
+	# )
 
-	queries = query.run(as_dict=True)
-	print("QB Output:", queries)
+	# queries = query.get_sql()
+	# print("QB Output:", queries)
+
+	# query = frappe.qb.get_query(
+    #     "Class Records",
+    #     fields=["student_name", "class_name", "student_name", "student_email"],
+    #     distinct=True
+    # )
+
+	# result = query.get_sql()
+	# print("QB Output:", result)
 
 # --------------------------------------------------------------------------------------
