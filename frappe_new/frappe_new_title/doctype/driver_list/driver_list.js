@@ -250,5 +250,49 @@ frappe.ui.form.on("Driver List", {
     //        console.log(exist)
     //    })
     // })
+// ------------------------------------------------------------------------------------------
+// Javascript Dialog API
+// frappe.ui.Dialog 
+// frm.add_custom_button('Dialog API', () => {
+//    let d = new frappe.ui.Dialog({
+//      title: 'Driver Details',
+//      fields: [
+//          {
+//              label: 'First Name',
+//              fieldname: 'first_name',
+//              fieldtype: 'Data'
+//          },
+//          {
+//              label: 'Last Name',
+//              fieldname: 'last_name',
+//              fieldtype: 'Data'
+//          },
+//          {
+//              label: 'Age',
+//              fieldname: 'age',
+//              fieldtype: 'Int'
+//          }
+//      ],
+//      size: 'small',
+//      primary_action_label: 'Submit',
+//      primary_action(values) {
+//          console.log(values);
+//          d.hide();
+//      }
+//    });
+//    d.show();
+//  })
+// // frappe.prompt 
+    // frm.add_custom_button('prompt', () => {
+    // // frappe.prompt('First Name', ({value}) => console.log(value))
+    // // frappe.prompt('First Name', console.log, 'Enter First Name', 'Submit');
+    // frappe.prompt({
+    //     label: 'Birth Date',
+    //     fieldname: 'date',
+    //     fieldtype: 'Date'
+    // }, (values) => {
+    //     console.log(values.date)
+    // })
+    // })
     },
 });

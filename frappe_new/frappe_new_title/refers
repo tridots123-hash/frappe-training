@@ -2592,3 +2592,70 @@ def send_email_using_template(docname, template_name):
         });
     }
 });
+
+
+let d = new frappe.ui.Dialog({
+    title: 'Enter details',
+    fields: [
+        {
+            label: 'First Name',
+            fieldname: 'first_name',
+            fieldtype: 'Data'
+        },
+        {
+            label: 'Last Name',
+            fieldname: 'last_name',
+            fieldtype: 'Data'
+        },
+        {
+            label: 'Age',
+            fieldname: 'age',
+            fieldtype: 'Int'
+        }
+    ],
+    size: 'small', // small, large, extra-large 
+    primary_action_label: 'Submit',
+    primary_action(values) {
+        console.log(values);
+        d.hide();
+    }
+});
+
+d.show();
+
+
+
+// prompt for single value of type Data
+frappe.prompt('First Name', ({ value }) => console.log(value))
+
+// Set title and button label
+frappe.prompt('First Name', console.log, 'Enter First Name', 'Submit');
+
+// prompt for single value of any type
+frappe.prompt({
+    label: 'Birth Date',
+    fieldname: 'date',
+    fieldtype: 'Date'
+}, (values) => {
+    console.log(values.date);
+})
+
+// prompt for multiple values
+frappe.prompt([
+    {
+        label: 'First Name',
+        fieldname: 'first_name',
+        fieldtype: 'Data'
+    },
+    {
+        label: 'Last Name',
+        fieldname: 'last_name',
+        fieldtype: 'Data'
+    },
+], (values) => {
+    console.log(values.first_name, values.last_name);
+})
+
+
+
+
