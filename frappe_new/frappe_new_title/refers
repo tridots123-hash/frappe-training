@@ -2399,3 +2399,196 @@ query = (
 
 result = query.run(as_dict=True)
 print("QB Output:", result)
+
+
+frappe.ui.form.on('Student', {
+    refresh(frm) {
+        frm.add_custom_button('Get Student Info', () => {
+            let route = frappe.get_route(); // ["app", "student", "STD-0001"]
+            let student_id = route[2];
+
+            frappe.call({
+                method: 'your_app.api.get_student_info',
+                args: {
+                    student_id: student_id
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        frappe.msgprint(`Email: ${r.message.email}<br>Class: ${r.message.class}`);
+                    }
+                }
+            });
+        });
+    }
+});
+
+
+# your_app/api.py
+import frappe
+
+@frappe.whitelist()
+def get_student_info(student_id):
+    student = frappe.get_doc("Student", student_id)
+    return {
+        "email": student.email,
+        "class": student.student_class
+    }
+
+
+
+frm.add_custom_button('Get Route', () => {
+    let route = frappe.get_route();
+    let student_id = route[2];
+
+    frappe.call({
+        method: "frappe_new.frappe_new_title.doctype.driver_list.driver_list.get_diver_info",
+        args: {
+            student_id: student_id
+        },
+        callback: function(res) {
+            if (res.message) {
+                let data = res.message;
+
+                // Format joining_date if exists
+                let formatted_date = data.joining_date
+                    ? frappe.format(data.joining_date, { fieldtype: 'Date' })
+                    : 'N/A';
+
+                // Optional: format other values too if needed
+                let msg = `
+                    <b>Driver Name:</b> ${data.driver_name || 'N/A'}<br>
+                    <b>Joining Date:</b> ${formatted_date}
+                `;
+
+                frappe.msgprint(msg);
+            }
+        }
+    });
+});
+
+
+// Create your namespace safely
+frappe.provide("frappe.frappe_new.utils");
+
+// Define your custom function
+frappe.frappe_new.utils.add_numbers = function(a, b) {
+    return a + b;
+};
+
+
+
+app_include_js = "/assets/frappe_new/js/utils.js"
+
+
+frappe.ui.form.on('Student', {
+    refresh(frm) {
+        frm.add_custom_button('Add Numbers', () => {
+            // Call your function from utils.js
+            let result = frappe.frappe_new.utils.add_numbers(5, 7);
+            frappe.msgprint("Result: " + result);  // Output: Result: 12
+        });
+    }
+});
+
+
+frappe.ui.form.on('Your Doctype Name', {
+    refresh: function(frm) {
+        frm.add_custom_button(__('Send Email'), function() {
+            frappe.call({
+                method: "your_app.your_module.doctype.your_doctype.your_doctype.send_email",
+                args: {
+                    docname: frm.doc.name
+                },
+                callback: function(r) {
+                    if (r.message === "success") {
+                        frappe.msgprint("Email sent successfully!");
+                    } else {
+                        frappe.msgprint("Failed to send email.");
+                    }
+                }
+            });
+        });
+    }
+});
+
+
+import frappe
+from frappe.core.doctype.communication.email import make
+
+@frappe.whitelist()
+def send_email(docname):
+    doc = frappe.get_doc("Your Doctype Name", docname)
+
+    # Example email content
+    subject = f"Details of {doc.name}"
+    message = f"""
+    <p>Hello,</p>
+    <p>Here are the details of <b>{doc.name}</b>:</p>
+    <ul>
+        <li>Field 1: {doc.your_field_1}</li>
+        <li>Field 2: {doc.your_field_2}</li>
+    </ul>
+    <p>Thank you.</p>
+    """
+
+    try:
+        frappe.sendmail(
+            recipients=["recipient@example.com"],  # or doc.email
+            subject=subject,
+            message=message
+        )
+        return "success"
+    except Exception as e:
+        frappe.log_error(frappe.get_traceback(), "Email Send Failed")
+        return "failed"
+
+
+
+
+        import frappe
+from frappe.utils.jinja import render_template
+
+@frappe.whitelist()
+def send_email_using_template(docname, template_name):
+    doc = frappe.get_doc("Your Doctype Name", docname)
+    template = frappe.get_doc("Email Template", template_name)
+
+    try:
+        # Render subject & message using Jinja
+        subject = render_template(template.subject, {"doc": doc})
+        message = render_template(template.response, {"doc": doc})
+
+        # Send the email
+        frappe.sendmail(
+            recipients=[doc.email],  # or static email
+            subject=subject,
+            message=message
+        )
+        return "success"
+    except Exception as e:
+        frappe.log_error(frappe.get_traceback(), "Email Template Send Failed")
+        return "failed"
+
+
+
+
+          frappe.sendmail(
+                recipients=[row.email],
+                sender=doc.email,
+                subject=f"Homework from {doc.teacher_name}",
+                message=f"""Hi {row.student_name},<br><br>
+                            Your homework for {now_datetime().date()} is:<br><br>
+                            {row.homework}<br><br>
+                            Regards,<br>{doc.teacher_name}"""
+            )
+
+
+            frappe.ui.form.on('Your Doctype', {
+    refresh: function(frm) {
+        frm.add_custom_button('Click Me', () => {
+            frappe.require('/assets/your_app/js/custom_utils.js', function() {
+                show_alert_message(); // this function comes from the external file
+            });
+        });
+    }
+});

@@ -335,10 +335,11 @@ class ClassRecords(Document):
 	# 		class_records.student_name,
 	# 		class_records.student_email
 	# 	)
-	# 	.limit(5)
+	# 	.limit(5) 
+	# 	.offset(5)
 	# )
 
-	# queries = query.run(as_dict=True)
+	# queries = query
 	# print("QB Output:", queries)
 # --------------------------------------------------------------------------------------
 	# class_records = frappe.qb.DocType("Class Records")
@@ -357,12 +358,17 @@ class ClassRecords(Document):
 	# print("QB Output:", queries)
 
 	# query = frappe.qb.get_query(
-    #     "Class Records",
-    #     fields=["student_name", "class_name", "student_name", "student_email"],
-    #     distinct=True
-    # )
+	# 	"Class Records",
+	# 	fields=["student_name", "class_name", "student_name", "student_email"],
+	# 	distinct=True,
+	# 	ignore_permissions=False,
+	# 	user="Administrator",
+	# )
 
-	# result = query.get_sql()
-	# print("QB Output:", result)
+	# try:
+	# 	results = query.run(as_dict=True)
+	# 	print("QB Output:", results)
+	# except frappe.PermissionError:
+	# 	print("User does not have permission to read DocType!")
 
 # --------------------------------------------------------------------------------------

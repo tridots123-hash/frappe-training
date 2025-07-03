@@ -2,14 +2,18 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "LIC-.###",
  "creation": "2025-06-16 13:20:32.597680",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "driver_name",
+  "driver_email",
   "license_name",
   "phone_number",
-  "joining_date"
+  "joining_date",
+  "status",
+  "salary"
  ],
  "fields": [
   {
@@ -31,15 +35,33 @@
    "fieldname": "joining_date",
    "fieldtype": "Date",
    "label": "Joining Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nClose\nIn Progress"
+  },
+  {
+   "fieldname": "salary",
+   "fieldtype": "Currency",
+   "label": "Salary"
+  },
+  {
+   "fieldname": "driver_email",
+   "fieldtype": "Data",
+   "label": "Driver Email"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-16 14:52:46.309214",
+ "modified": "2025-07-02 17:07:35.726229",
  "modified_by": "Administrator",
  "module": "frappe-new-title",
  "name": "Driver List",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

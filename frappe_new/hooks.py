@@ -56,6 +56,8 @@ app_license = "mit"
 #     "https://checkout.razorpay.com/v1/checkout.js"
 # ]
 
+# app_include_js = "/assets/frappe_new/js/provider.js"
+
 # # app_include_js is used access app inside desk only write the code in global format
 # app_include_js = ["/assets/frappe_new/js/app_desk.js"]
 # # web_include_js is used access web side related only work in with app only using website like webform,webview,webpage
@@ -329,4 +331,6 @@ portal_menu_items = [
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+# web_include_js = ["/assets/frappe_new/js/page.js"]
 
