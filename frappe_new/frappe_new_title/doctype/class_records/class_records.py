@@ -17,7 +17,7 @@ from frappe.model.document import Document
 
 
 class ClassRecords(Document):
-	
+	pass
 	# query = frappe.qb.get_query("Class Records")
 	# queries = query.run(as_dict=True)
 	# print("QB Output:",queries)

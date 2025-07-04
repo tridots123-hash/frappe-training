@@ -56,7 +56,7 @@ app_license = "mit"
 #     "https://checkout.razorpay.com/v1/checkout.js"
 # ]
 
-# app_include_js = "/assets/frappe_new/js/provider.js"
+app_include_js = "/assets/frappe_new/js/provider.js"
 
 # # app_include_js is used access app inside desk only write the code in global format
 # app_include_js = ["/assets/frappe_new/js/app_desk.js"]

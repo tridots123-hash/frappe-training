@@ -3,7 +3,7 @@
 
 # import frappe
 from frappe.model.document import Document
-
+# import json
 
 class DriverList(Document):
      pass
@@ -56,3 +56,18 @@ class DriverList(Document):
 #         return "success"
 #     except Exception as e:
 #         return f"Failed: {e}"
+
+# ------------------------------------------------------------------------------------------
+# server action
+# @frappe.whitelist()
+# def server_action(**doc_name):
+#     # Step 1: Get the JSON string from 'args'
+#     args_json = doc_name.get('args')
+#     # Step 2: Parse the JSON string
+#     args = json.loads(args_json)
+#     # Step 3: Extract 'doc_name'
+#     doc_name_id = args.get('doc_name')
+
+#     if doc_name_id:
+#        del_value = frappe.db.delete('Driver List', doc_name_id)
+#        return 'deletion success'

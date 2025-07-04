@@ -2659,3 +2659,14 @@ frappe.prompt([
 
 
 
+frappe.msgprint({
+    title: 'Warning!',
+    message: 'Do you really want to delete this record?',
+    primary_action: {
+        label: 'Delete',
+        server_action: 'my_app.api.delete_record',
+        args: {
+            docname: 'TEST-0001'
+        }
+    }
+});

@@ -252,6 +252,7 @@ frappe.ui.form.on("Driver List", {
     // })
 // ------------------------------------------------------------------------------------------
 // Javascript Dialog API
+// Full control, Multiple customizations, Suitable for complex forms, Manual show/hide	
 // frappe.ui.Dialog 
 // frm.add_custom_button('Dialog API', () => {
 //    let d = new frappe.ui.Dialog({
@@ -276,16 +277,90 @@ frappe.ui.form.on("Driver List", {
 //      size: 'small',
 //      primary_action_label: 'Submit',
 //      primary_action(values) {
-//          console.log(values);
+//          console.log("this is value:",values);
 //          d.hide();
 //      }
 //    });
 //    d.show();
 //  })
-// // frappe.prompt 
+// ------------------------------------------------------------------------------------------
+// frappe.ui.Dialog liked doctype
+// frm.add_custom_button('Open Dialog', () => {
+//         let dialog = new frappe.ui.Dialog({
+//             title: 'Enter Your Details',
+//             fields: [
+//                 { label: 'Doctype Name', fieldname: 'mobile', fieldtype: 'Data' },
+//                 { label: 'Department', fieldname: 'department', fieldtype: 'Link', options: 'Class Records' }
+//             ],
+//             primary_action_label: 'Save',
+//             primary_action(values) {
+//                 console.log('User Input:', values);
+//                 frappe.msgprint('Saved: ' + values.mobile);
+//                 dialog.hide();
+//             }
+//         });
+//         dialog.show();
+//     });
+// ------------------------------------------------------------------------------------------
+//    msgprint
+    // frm.add_custom_button('msgprint', () => {
+        // frappe.msgprint(__('Document updated successfully'));
+
+        //   frappe.msgprint({
+        //   title: __('Important message'),
+        //   indicator: 'yellow',
+        //   message: __('Document updated successfully')
+        
+        //   frappe.msgprint({
+        //   title: 'Confirm',
+        //   message: 'Are you sure you want to proceed?',
+        //   primary_action_label: 'Yes', 
+        //   primary_action: {
+        // //      action() {
+        //            console.log('this action message')
+        //             }
+        //       }
+        //   }
+        //   });
+// });
+// msgprint server and client call
+// frm.add_custom_button('server action', () => {
+//     frappe.msgprint({
+//         title: 'Warning!',
+//         message: 'Active the server side call',
+//         primary_action: {
+//             label: 'Delete',
+//             server_action: 'frappe_new.frappe_new_title.doctype.driver_list.driver_list.server_action',
+//             args: {
+//                 doc_name: 'LIC-007'
+//             },
+//             callback: function(r) {
+//                 if(r.message) {
+//                     console.log(r.message)
+//                 }
+//             }
+//         }
+//     });
+// })
+// frm.add_custom_button('client action', () => {
+//      frappe.msgprint({
+//         title: 'Warning!',
+//         message: 'Active the client side call',
+//         primary_action: {
+//             label: 'action',
+//             client_action: 'frappe.frappe_new.provider.alert',
+//             args: {
+//                 name: 'alert this'
+//             }
+//         }
+//      })
+// })
+// ------------------------------------------------------------------------------------------
+// frappe.prompt() is a shortcut method to show a quick popup with some input fields — without creating full frappe.ui.Dialog manually.
+	// Quick input, Simple use case, Suitable for 1–2 fields only, Auto show, auto hide
     // frm.add_custom_button('prompt', () => {
-    // // frappe.prompt('First Name', ({value}) => console.log(value))
-    // // frappe.prompt('First Name', console.log, 'Enter First Name', 'Submit');
+    // frappe.prompt('Last Name', ({value}) => console.log(value))
+    // frappe.prompt('Last Name', console.log, 'Enter last Name', 'Submit');
     // frappe.prompt({
     //     label: 'Birth Date',
     //     fieldname: 'date',
@@ -293,6 +368,114 @@ frappe.ui.form.on("Driver List", {
     // }, (values) => {
     //     console.log(values.date)
     // })
+// ------------------------------------------------------------------------------------------
+    // frappe.prompt([
+    //      {
+    //         label: 'Enter your name',
+    //         fieldname: 'name',
+    //         fieldtype: 'Data',
+    //         reqd: 1
+    //      }
+    // ],(values) => {
+    //         console.log(values.name);
+    //         frappe.msgprint('Hello ' + values.name)}, 
+    //         'User Info', // title
+    //         'Submit'    // button text
+    // );
+// ------------------------------------------------------------------------------------------
+    // frappe.prompt([
+    //     {
+    //         label: 'Status',
+    //         fieldname: 'status',
+    //         fieldtype: 'Select',
+    //         options: 'Open\nIn Progress\nClosed',
+    //         reqd: 1
+    //     }],
+    //      (values) => {
+    //          frappe.db.set_value('Driver List', frm.doc.name, 'status', values.status)
+    //              .then(() => {
+    //                  frappe.msgprint('Status updated to ' + values.status);
+    //                  frm.reload_doc();
+    //              });
+    //      },
+    //      'Update Status',
+    //      'Set'
+    //      );
     // })
+// ------------------------------------------------------------------------------------------
+	// Ask for confirmation (Yes/No), Simple popup, Regular confirmation, ❌ Only one message
+    // frm.add_custom_button('Confirm', () => {
+    //     frappe.confirm('Are you sure you want to proceed?',
+    //     () => {
+    //       console.log('You onclick the Yes Button')
+    //     }, () => {
+    //       console.log('You onclick the No Button')
+    //    })
+    // })
+// ------------------------------------------------------------------------------------------
+//    Warn the user with a strong message, Visually stronger (red warning look), Risky or critical actions, Can show both title and sub description
+    // frm.add_custom_button('Warn', () => {
+    //     frappe.warn('This action is irreversible!',
+    //           'Do you really want to delete this?',
+    //            () => {
+    //            console.log('Proceeding with deletion');
+    //     },() => {
+    //     console.log('Action cancelled');
+    // }
+    // );
+    // })
+// ------------------------------------------------------------------------------------------
+    // frm.add_custom_button('show_alert', () => {
+        // frappe.show_alert('Hi, you have a new message', 5) 
+        // 5 This is for How long the alert box stays visible (in seconds)
+        // setInterval(()=>{
+        //     frappe.show_alert('Hi, you have a new message', 5) 
+        // },60000)
+        // 60000 sec = 1 minutes
+        // frappe.show_alert({
+        //     message:__('Hi, you have a new message'),
+        //     indicator:'green'
+        // }, 5)
+    // })
+// ------------------------------------------------------------------------------------------
+//    frm.add_custom_button('show_progress', () => {
+//        frappe.show_progress('Loading..', 70, 100, 'Please wait');
+//    })
+// ------------------------------------------------------------------------------------------
+// This only creates the document in memory, but it won’t navigate (route) to the form.
+// frm.add_custom_button('new_doc', () => {
+//     frappe.prompt([
+//         { label: 'Driver Name', fieldname: 'driver_name', fieldtype: 'Data', reqd: 1 },
+//         { label: 'License No', fieldname: 'license_name', fieldtype: 'Data' }
+//     ], 
+//     (values) => {
+//         let doc = frappe.model.get_new_doc('Driver List');
+//         doc.driver_name = values.driver_name;
+//         doc.license_name = values.license_name;
+//         frappe.set_route('Form', 'Driver List', doc.name);
+//     }, 
+//     'Create New Driver', 'Create'
+//     );
+// })
+// ------------------------------------------------------------------------------------------
+//  frm.add_custom_button('Select Employees', () => {
+//         new frappe.ui.form.MultiSelectDialog({
+//             doctype: "Employee",
+//             target: frm,
+//             setters: {
+//                 department: frm.doc.name  // Filter employees of this dept
+//             },
+//             add_filters_group: 1,
+//             action(selections) {
+//                 console.log("Selected Employees:", selections);
+//                 frappe.msgprint("You selected " + selections.length + " employee(s)");
+//                 // Do something with selected employee names (selections is an array of names)
+//             },
+//             primary_action_label: "Add Employees"
+//         });
+//      });
     },
 });
+
+
+
