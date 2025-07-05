@@ -58,6 +58,10 @@ app_license = "mit"
 
 app_include_js = "/assets/frappe_new/js/provider.js"
 
+doctype_list_js = {
+    "Move": "public/js/move_list.js"
+}
+
 # # app_include_js is used access app inside desk only write the code in global format
 # app_include_js = ["/assets/frappe_new/js/app_desk.js"]
 # # web_include_js is used access web side related only work in with app only using website like webform,webview,webpage

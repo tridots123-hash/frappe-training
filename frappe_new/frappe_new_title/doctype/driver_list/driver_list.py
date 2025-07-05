@@ -19,8 +19,7 @@ class DriverList(Document):
 # 	}
 # ------------------------------------------------------------------------------------------
 # @frappe.whitelist()
-# def single_parameter(role_profile, person):
-# 	print(person)
+# def single_parameter(role_profile):
 # 	if role_profile == 'Test':
 # 		return "this is single parameter"
 # 	else:

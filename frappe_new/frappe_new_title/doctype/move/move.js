@@ -58,25 +58,26 @@
 //     }
 // })
 
-    frappe.ui.form.on('Move', {
-    refresh: function(frm) {
-        frm.add_custom_button('Load Movies', () => {
-            frappe.call({
-                method: "frappe_new.frappe_new_title.doctype.move.move.get_movies",
-                callback: function(r) {
-                    if (r.message) {
-                        // let movie_list = r.message.map(m => `${m.movie_name} (${m.rating})`).join('<br>');
-                        // frappe.msgprint({
-                        //     title: "Movie List",
-                        //     message: movie_list,
-                        //     indicator: 'blue'
-                        // });
-                        // frappe.msgprint(JSON.stringify(r.message));
+//     frappe.ui.form.on('Move', {
+//     refresh: function(frm) {
+//         frm.add_custom_button('Load Movies', () => {
+//             frappe.call({
+//                 method: "frappe_new.frappe_new_title.doctype.move.move.get_movies",
+//                 callback: function(r) {
+//                     if (r.message) {
+//                         // let movie_list = r.message.map(m => `${m.movie_name} (${m.rating})`).join('<br>');
+//                         // frappe.msgprint({
+//                         //     title: "Movie List",
+//                         //     message: movie_list,
+//                         //     indicator: 'blue'
+//                         // });
+//                         // frappe.msgprint(JSON.stringify(r.message));
 
-                        console.log(r.message)
-                    }
-                }
-            });
-        });
-    }
-});
+//                         console.log(r.message)
+//                     }
+//                 }
+//             });
+//         });
+//     }
+// });
+

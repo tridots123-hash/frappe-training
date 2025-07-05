@@ -6,6 +6,7 @@ frappe.ui.form.on("Driver List", {
     //    frm.add_custom_button('Get Route', () => {
     //        let route = frappe.get_route();
     //        let Driver_id = route[2];
+    //        console.log(route)
     //        frappe.call({
     //            method: "frappe_new.frappe_new_title.doctype.driver_list.driver_list.get_diver_info",
     //            args: {
@@ -18,10 +19,10 @@ frappe.ui.form.on("Driver List", {
     //    })
 // # ------------------------------------------------------------------------------------------
     //    frm.add_custom_button('Set Route', () => {
-    //     //    frappe.set_route('List', 'Driver List', 'List'); 
-    //     //    frappe.set_route(['Form', 'Driver List', 'LIC-002'])
+    //     //    frappe.set_route('List', 'Class Records', 'List'); 
+    //     //    frappe.set_route(['Form', 'Driver List', 'List'])
     //     //    frappe.set_route('List/Driver List/List')
-    //     //    frappe.set_route('List', 'Driver List', 'List', { status: 'Close' })
+    //     //    frappe.set_route('List', 'Driver List', 'List', { status: 'open' })
     //    })
 // # ------------------------------------------------------------------------------------------
     //   frm.add_custom_button('Utilities format Date', () => {
@@ -35,9 +36,7 @@ frappe.ui.form.on("Driver List", {
     //         callback: function(res) {
     //             if (res.message) {
     //                 let data = res.message;
-    //                 let formatted_date = data.joining_date
-    //                     ? frappe.format(data.joining_date, {fieldtype: "Date"})
-    //                     : "N/A";
+    //                 let formatted_date = data.joining_date ? frappe.format(data.joining_date, {fieldtype: "Date"}) : "N/A";
     //                 let msg = `
     //                    <b>Driver Name:</b> ${data.Driver_List || 'N/A'}<br>
     //                    <b>Joining Date:</br> ${formatted_date}
@@ -75,7 +74,7 @@ frappe.ui.form.on("Driver List", {
     // frm.add_custom_button('frappe provide', () => {
     //     let a = 20;
     //     let b = 10;
-    //     let result = frappe.frappe_new.provider.add_numbers(a, b);
+    //     let result = add_numbers(a, b);
     //     frappe.msgprint("result:" + result)
     // });
 // # ------------------------------------------------------------------------------------------
@@ -117,7 +116,6 @@ frappe.ui.form.on("Driver List", {
 // frm.add_custom_button('single parameter', () => {
 //     frappe.call('frappe_new.frappe_new_title.doctype.driver_list.driver_list.single_parameter', {
 //         role_profile: 'Test',
-//         person: "Test2"
 //     }).then(r => {
 //         frappe.msgprint(r.message)
 //     })
@@ -145,35 +143,35 @@ frappe.ui.form.on("Driver List", {
 // ------------------------------------------------------------------------------------------
 // frappe.db.get_doc 
 //  frm.add_custom_button('get_doc', () => {
-//     frappe.db.get_doc('Driver List')
+//     frappe.db.get_doc('Driver List', frm.doc.name)
 //     .then(doc => {
 //         console.log("This is frontend call in get_doc:",doc)
 //     })
 //  })
 //  frappe.db.get_doc filters
 // frm.add_custom_button('get_doc', () => {
-//     frappe.db.get_doc('Driver List', null, { status: 'close' })
+//     frappe.db.get_doc('Driver List',  frm.doc.name, { status: 'close' })
 //     .then(doc => {
 //      console.log(doc)
 //    })
 // })
 // frappe.db.get_list
 // frm.add_custom_button('get_list', () => {
-//  frappe.db.get_list('Driver List', { fields: ['driver_email', 'driver_name', 'status'], filters: { status: 'open' }})
+//  frappe.db.get_list('Driver List', { fields: ['*'], filters: { status: 'close' }})
 //  .then(doc => {
 //      console.log(doc)
 //  })
 // })
 // frappe.db.get_value single value
 //   frm.add_custom_button('get_single_value', () => {
-//       frappe.db.get_value('Driver List', 'LIC-005', 'status')
+//       frappe.db.get_value('Driver List', 'LIC-001', 'status')
 //       .then(doc => {
 //          console.log(doc)
 //       })
 //   })
 // frappe.db.get_value Multiple value
 //  frm.add_custom_button('get_multi_value', () => {
-//      frappe.db.get_value('Driver List', 'LIC-005', ['status', 'driver_email'])
+//      frappe.db.get_value('Driver List', 'LIC-001', ['status', 'driver_email'])
 //      .then(doc => {
 //         console.log(doc.message.status, doc.message.driver_email)
 //      })
@@ -187,21 +185,22 @@ frappe.ui.form.on("Driver List", {
 //    })
 // frappe.db.get_single_value
 //    frm.add_custom_button('get_single_value', () => {
-//     frappe.db.get_single_value('Driver List', 'driver_email')
+//     frappe.db.get_single_value('Driver List','driver_email')
 //     .then(doc => {
 //       console.log(doc);
 //     });
 //    })
 // frappe.db.set_value update a field's value
 //    frm.add_custom_button('set_value', () => {
-//      frappe.db.set_value('Driver List', 'LIC-001', 'status','Open')
+//      frappe.db.set_value('Driver List', 'LIC-003', 'status','Open')
 //      .then(doc => {
 //         console.log(doc.message)
 //      })
 //    })
 // frappe.db.set_value update multiple fields
 //   frm.add_custom_button('set_multiple_value', () => {
-//     frappe.db.set_value('Driver List', 'LIC-001', {'status':'Open', 'salary': 50000 })
+//     frappe.db.set_value('Driver List', 'LIC-001', {'status':'Close', 'salary': 80000 })
+//     frm.reload_doc()
 //     .then(doc => {
 //         console.log(doc.message)
 //     })
