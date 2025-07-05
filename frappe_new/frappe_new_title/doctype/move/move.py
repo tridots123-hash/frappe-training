@@ -81,7 +81,7 @@ def get_movies():
     # movie, genre = frappe.db.get_value('Move', 'Move-008', ['movie_name', 'genre'])
     # return movie, genre
 # ------------------------------------------ 
-# as dict
+# as dict =>with fieldname as list without fieldname
     # movies = frappe.db.get_value('Move', 'Move-008', ['movie_name', 'genre'], as_dict=True)
     # return movies
 # ------------------------------------------ 
@@ -115,9 +115,25 @@ def get_movies():
     # return movies
 # ------------------------------------------ 
 # delete the filter records
-    #  movies = frappe.db.delete('Move', 'Move-004')
-    #  return movies
+    # movies = frappe.db.delete('Move', 'Move-004')
+    # return movies
 # ------------------------------------------ 
-
-
+# frappe db sql raw query
+    # movies = frappe.db.sql("""
+    #      SELECT * FROM `tabMove`
+    # """)
+    # return movies
+# ------------------------------------------ 
+# frappe db multisql raw query
+    # results = frappe.db.multisql({
+    # "mariadb": [
+    #     ("SELECT * FROM `tabMove`"),
+    #     ("SELECT * FROM `tabClass Records`")
+    # ]
+    # })
+    # print(results)
+# ------------------------------------------ 
+# Returns a tuple of the table description for given DocType.
+#     results = frappe.db.describe('Move')
+#     return results
 

@@ -3,20 +3,20 @@
 
 frappe.ui.form.on("Driver List", {
 	refresh(frm) {
-    //    frm.add_custom_button('Get Route', () => {
-    //        let route = frappe.get_route();
-    //        let Driver_id = route[2];
-    //        console.log(route)
-    //        frappe.call({
-    //            method: "frappe_new.frappe_new_title.doctype.driver_list.driver_list.get_diver_info",
-    //            args: {
-    //                Driver_id: Driver_id
-    //            },
-    //            callback: function(res) {
-    //                  msgprint("Driver Info: " + JSON.stringify(res.message));
-    //            }
-    //        })
-    //    })
+       frm.add_custom_button('Get Route', () => {
+           let route = frappe.get_route();
+           let Driver_id = route[2];
+           console.log(route)
+           frappe.call({
+               method: "frappe_new.frappe_new_title.doctype.driver_list.driver_list.get_diver_info",
+               args: {
+                   Driver_id: Driver_id
+               },
+               callback: function(res) {
+                     msgprint("Driver Info: " + JSON.stringify(res.message));
+               }
+           })
+       })
 // # ------------------------------------------------------------------------------------------
     //    frm.add_custom_button('Set Route', () => {
     //     //    frappe.set_route('List', 'Class Records', 'List'); 

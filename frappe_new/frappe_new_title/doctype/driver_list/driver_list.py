@@ -1,22 +1,22 @@
 # Copyright (c) 2025, imran and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 # import json
 
 class DriverList(Document):
      pass
-# @frappe.whitelist()	
-# def get_diver_info(Driver_id):
-# 	DriverList = frappe.get_doc("Driver List", Driver_id)
-# 	return {
-# 	    "Driver_List": DriverList.driver_name,
-# 		"license_name": DriverList.license_name,
-#         "phone_number": DriverList.phone_number,
-# 		"joining_date": DriverList.joining_date,
-# 		"salary": DriverList.salary,
-# 	}
+@frappe.whitelist()	
+def get_diver_info(Driver_id):
+	DriverList = frappe.get_doc("Driver List", Driver_id)
+	return {
+	    "Driver_List": DriverList.driver_name,
+		"license_name": DriverList.license_name,
+        "phone_number": DriverList.phone_number,
+		"joining_date": DriverList.joining_date,
+		"salary": DriverList.salary,
+	}
 # ------------------------------------------------------------------------------------------
 # @frappe.whitelist()
 # def single_parameter(role_profile):
