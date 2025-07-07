@@ -1,5 +1,4 @@
 import frappe
-from frappe.utils import now,unique,random_string,validate_json_string,money_in_words,comma_and, today, add_days, format_duration, date_diff, cint, pretty_date, month_diff
 
 def get_context(context):
     context.expenses = frappe.get_all(
@@ -8,8 +7,7 @@ def get_context(context):
         order_by="expense_date desc",
         limit_page_length=50,
     )
-    # print("Now:", now())
-    # print("Today:", today())
+
     # print("Add 5 days:", add_days(today(), 5))
     # # But yes, in casual terms you can call it days_diff, because it tells how many days difference between 2 dates.
     # print("Date diff:", date_diff("2025-06-02", today()))
