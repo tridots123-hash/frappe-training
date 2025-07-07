@@ -14,12 +14,13 @@
     {% for exp in expenses %}
     <tr>
         <!-- <td>{{frappe.format(exp.expense_date,{'fieldtype': 'Date'})}}</td> -->
-        <td>{{ frappe.format_date(exp.expense_date) }}</td>
         <td>{{frappe.format(exp.name)}}</td>
+        <td>{{exp.title}}</td> 
         <td class="text-end">
           {{ frappe.format(exp.amount,
               {'fieldtype': 'Currency', 'options': 'INR'}, exp) }}
         </td>
+       <td>{{ frappe.format_date(exp.expense_date) }}</td>
         <td>{{frappe.format(exp.status, 
             {'fieldtype': 'Data'}) }}
         </td>
@@ -27,4 +28,82 @@
     {% endfor %}
    </tbody>
 </table>
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.format  -->
+<!-- {% for exps in expenses %}
+   <span>{{ frappe.format(exps.expense_date, {'fieldtype': 'Date'}) }}</span><br>
+{% endfor %} -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.format_date 
+{% for exps in expenses %}
+   <span>{{ frappe.format_date(exps.expense_date) }}</span><br>
+{% endfor %} -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.get_url  -->
+<!-- <span>{{ frappe.get_url() }}</span> -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.get_doc -->
+<!-- {% set doc = frappe.get_doc('Expense Entry', 'CUR-002') %}
+     <sapn>{{ doc.title }} - {{ doc.status }}</sapn> -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.get_all  -->
+<!-- {% set tasks = frappe.get_all('Expense Entry', filters={'status': 'Pending'}, fields=['title', 'expense_date'], order_by='expense_date asc') %}
+{% for task in tasks %}
+      <span>Title: {{ task.title }}</span><br>
+      <span>Expense Date: {{ frappe.format_date(task.expense_date) }}</span><br>
+{% endfor %} -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.db.get_value  -->
+<!-- {% set title = frappe.db.get_value('Expense Entry', 'CUR-002', 'title') %}
+<span>{{ title }}</span> -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.db.get_value multi -->
+<!-- {% set title, amount = frappe.db.get_value('Expense Entry', 'CUR-002', ['title', 'amount'])%}
+<h1>{{title}}</h1>
+<span>{{frappe.format(amount)}}</span> -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.get\system\settings -->
+<!-- {% if frappe.get_system_settings('country') == 'India' %}
+<p>Yes this is india</p>
+{% else %}
+<p>No this is India</p>
+{% endif %} -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.get_meta  -->
+<!-- You can access all the fields, field types, labels, etc., defined in the DocType — without querying the actual data (database records) -->
+<!-- {% set meta = frappe.get_meta('Expense Entry') %}
+Task has {{ meta.fields | length }} fields.
+<ul>
+  {% for field in meta.fields %}
+    <li>{{ field.fieldname }} ({{ field.fieldtype }})</li>
+  {% endfor %}
+</ul>
+{% if meta.get_field('status') %}
+It also has a status field.
+{% endif %} -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe.get_fullname  -->
+<!-- frappe.render_template("Hello {{ name }}!", {"name": "Karthik"}) -->
+<!-- ------------------------------------------------------------------------------------------- -->
+<!-- frappe._-->
+<!-- {{ _('This string should get translated') }} -->
+<!-- ------------------------------------------------------------------------------------------- -->
+
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

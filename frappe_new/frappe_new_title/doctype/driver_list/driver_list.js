@@ -3,20 +3,20 @@
 
 frappe.ui.form.on("Driver List", {
 	refresh(frm) {
-       frm.add_custom_button('Get Route', () => {
-           let route = frappe.get_route();
-           let Driver_id = route[2];
-           console.log(route)
-           frappe.call({
-               method: "frappe_new.frappe_new_title.doctype.driver_list.driver_list.get_diver_info",
-               args: {
-                   Driver_id: Driver_id
-               },
-               callback: function(res) {
-                     msgprint("Driver Info: " + JSON.stringify(res.message));
-               }
-           })
-       })
+    //    frm.add_custom_button('Get Route', () => {
+    //        let route = frappe.get_route();
+    //        let Driver_id = route[2];
+    //        console.log(route)
+    //        frappe.call({
+    //            method: "frappe_new.frappe_new_title.doctype.driver_list.driver_list.get_diver_info",
+    //            args: {
+    //                Driver_id: Driver_id
+    //            },
+    //            callback: function(res) {
+    //                  msgprint("Driver Info: " + JSON.stringify(res.message));
+    //            }
+    //        })
+    //    })
 // # ------------------------------------------------------------------------------------------
     //    frm.add_custom_button('Set Route', () => {
     //     //    frappe.set_route('List', 'Class Records', 'List'); 
@@ -209,10 +209,10 @@ frappe.ui.form.on("Driver List", {
 //    frm.add_custom_button('insert', () => {
 //       frappe.db.insert({
 //         doctype: 'Driver List', 
-//         driver_name: 'Thoufeeq',
-//         driver_email: 'thoufeeq@gmail.com',
+//         driver_name: 'Saba1',
+//         driver_email:'sabaee@gmail.com',
 //         license_name: 'LOC567774665',
-//         phone_number: 6789567867,
+//         phone_number: 67895678907,
 //         joining_date: '2025-07-20',
 //         status: 'Close',
 //         salary: 30000
@@ -237,14 +237,14 @@ frappe.ui.form.on("Driver List", {
 //    })
 // frappe.db.delete_doc delete the particular records
     // frm.add_custom_button('Delete_doc', () => {
-    // frappe.db.delete_doc('Driver List', 'LIC-006')
+    // frappe.db.delete_doc('Driver List', 'LIC-014')
     // .then(result => {
     //     console.log(result)
     // })
     // })
 // frappe.db.exists check the existing records
     // frm.add_custom_button('Existing', () => {
-    //    frappe.db.exists('Driver List', 'LIC-006')
+    //    frappe.db.exists('Driver List', 'LIC-013')
     //    .then(exist => {
     //        console.log(exist)
     //    })
@@ -275,8 +275,8 @@ frappe.ui.form.on("Driver List", {
 //      ],
 //      size: 'small',
 //      primary_action_label: 'Submit',
-//      primary_action(values) {
-//          console.log("this is value:",values);
+//      primary_action(summa) {
+//          console.log("this is value:",summa);
 //          d.hide();
 //      }
 //    });
@@ -285,21 +285,21 @@ frappe.ui.form.on("Driver List", {
 // ------------------------------------------------------------------------------------------
 // frappe.ui.Dialog liked doctype
 // frm.add_custom_button('Open Dialog', () => {
-//         let dialog = new frappe.ui.Dialog({
-//             title: 'Enter Your Details',
-//             fields: [
-//                 { label: 'Doctype Name', fieldname: 'mobile', fieldtype: 'Data' },
-//                 { label: 'Department', fieldname: 'department', fieldtype: 'Link', options: 'Class Records' }
-//             ],
-//             primary_action_label: 'Save',
-//             primary_action(values) {
-//                 console.log('User Input:', values);
-//                 frappe.msgprint('Saved: ' + values.mobile);
-//                 dialog.hide();
-//             }
-//         });
-//         dialog.show();
-//     });
+    //     let dialog = new frappe.ui.Dialog({
+    //         title: 'Enter Your Details',
+    //         fields: [
+    //             { label: 'Doctype Name', fieldname: 'mobile', fieldtype: 'Data' },
+    //             { label: 'Department', fieldname: 'department', fieldtype: 'Link', options: 'Class Records' }
+    //         ],
+    //         primary_action_label: 'Save',
+    //         primary_action(values) {
+    //             console.log('User Input:', values);
+    //             frappe.msgprint('Saved: ' + values.mobile);
+    //             dialog.hide();
+    //         }
+    //     });
+    //     dialog.show();
+    // });
 // ------------------------------------------------------------------------------------------
 //    msgprint
     // frm.add_custom_button('msgprint', () => {
@@ -307,20 +307,21 @@ frappe.ui.form.on("Driver List", {
 
         //   frappe.msgprint({
         //   title: __('Important message'),
-        //   indicator: 'yellow',
-        //   message: __('Document updated successfully')
+        //   indicator: 'dark gray',
+        //   message: __('Document updated successfully') })
         
         //   frappe.msgprint({
         //   title: 'Confirm',
         //   message: 'Are you sure you want to proceed?',
         //   primary_action_label: 'Yes', 
         //   primary_action: {
-        // //      action() {
+        //      action() {
         //            console.log('this action message')
+        //      }
         //             }
-        //       }
-        //   }
-        //   });
+        //       })
+          
+        
 // });
 // msgprint server and client call
 // frm.add_custom_button('server action', () => {
@@ -331,26 +332,21 @@ frappe.ui.form.on("Driver List", {
 //             label: 'Delete',
 //             server_action: 'frappe_new.frappe_new_title.doctype.driver_list.driver_list.server_action',
 //             args: {
-//                 doc_name: 'LIC-007'
+//                 doc_name: 'LIC-013'
 //             },
 //             callback: function(r) {
-//                 if(r.message) {
-//                     console.log(r.message)
-//                 }
+//                console.log(r.message)
 //             }
 //         }
 //     });
 // })
-// frm.add_custom_button('client action', () => {
+// // frm.add_custom_button('client action', () => {
 //      frappe.msgprint({
 //         title: 'Warning!',
 //         message: 'Active the client side call',
 //         primary_action: {
 //             label: 'action',
 //             client_action: 'frappe.frappe_new.provider.alert',
-//             args: {
-//                 name: 'alert this'
-//             }
 //         }
 //      })
 // })
@@ -367,6 +363,7 @@ frappe.ui.form.on("Driver List", {
     // }, (values) => {
     //     console.log(values.date)
     // })
+// })
 // ------------------------------------------------------------------------------------------
     // frappe.prompt([
     //      {
@@ -400,7 +397,7 @@ frappe.ui.form.on("Driver List", {
     //      'Update Status',
     //      'Set'
     //      );
-    // })
+    
 // ------------------------------------------------------------------------------------------
 	// Ask for confirmation (Yes/No), Simple popup, Regular confirmation, ❌ Only one message
     // frm.add_custom_button('Confirm', () => {
@@ -427,13 +424,13 @@ frappe.ui.form.on("Driver List", {
     // frm.add_custom_button('show_alert', () => {
         // frappe.show_alert('Hi, you have a new message', 5) 
         // 5 This is for How long the alert box stays visible (in seconds)
-        // setInterval(()=>{
+        // setTimeout(()=>{
         //     frappe.show_alert('Hi, you have a new message', 5) 
-        // },60000)
+        // },1000)
         // 60000 sec = 1 minutes
         // frappe.show_alert({
         //     message:__('Hi, you have a new message'),
-        //     indicator:'green'
+        //     indicator:'yellow'
         // }, 5)
     // })
 // ------------------------------------------------------------------------------------------
@@ -448,7 +445,7 @@ frappe.ui.form.on("Driver List", {
 //         { label: 'License No', fieldname: 'license_name', fieldtype: 'Data' }
 //     ], 
 //     (values) => {
-//         let doc = frappe.model.get_new_doc('Driver List');
+//         let doc = frappe.model.get_new_doc('Driver List',);
 //         doc.driver_name = values.driver_name;
 //         doc.license_name = values.license_name;
 //         frappe.set_route('Form', 'Driver List', doc.name);
@@ -456,7 +453,7 @@ frappe.ui.form.on("Driver List", {
 //     'Create New Driver', 'Create'
 //     );
 // })
-// ------------------------------------------------------------------------------------------
+// // ------------------------------------------------------------------------------------------
 //  frm.add_custom_button('Select Employees', () => {
 //         new frappe.ui.form.MultiSelectDialog({
 //             doctype: "Employee",

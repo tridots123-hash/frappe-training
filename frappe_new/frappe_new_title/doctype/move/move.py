@@ -10,12 +10,10 @@ class Move(Document):
 def get_movies():
     # get_list data
     # movies = frappe.db.get_list("Move")
-    # print(movies)
     # return movies 
 # ------------------------------------------
     # with pluck
-    # movies = frappe.db.get_list('Move', fields=["movie_name"] pluck='name')
-    # print(movies)
+    # movies = frappe.db.get_list('Move', pluck='movie_name')
     # return movies
 # ------------------------------------------ 
 # Combining filters and other arguments:
@@ -27,16 +25,16 @@ def get_movies():
     #     order_by='name asc',
     #     start=2,
     #     page_length=3,
-    #     as_list=True
+    #     # as_list=True
     # )
-    # print(movies)
+    # # print(movies)
     # return movies
 # ------------------------------------------ 
 # Tasks with date after 2019-09-08
     # movies = frappe.db.get_list(
     #     'Move',
     #     filters={
-    #         'release_date': ['<', '2025-08-01']
+    #         'release_date': ['>', '2025-07-31']
     #     },
     #     fields=['name', 'movie_name', 'rating', 'genre', 'release_date'],
     #     order_by='release_date asc'
@@ -58,7 +56,7 @@ def get_movies():
     # movies = frappe.db.get_list(
     #     'Move',
     #     filters = {
-    #         'movie_name': ['like', '%theri%']
+    #         'movie_name': ['like', '%indian%']
     #     },
     #     fields=['name', 'movie_name', 'rating', 'genre', 'release_date'],
     #     order_by='release_date asc'
@@ -136,4 +134,5 @@ def get_movies():
 # Returns a tuple of the table description for given DocType.
 #     results = frappe.db.describe('Move')
 #     return results
+
 

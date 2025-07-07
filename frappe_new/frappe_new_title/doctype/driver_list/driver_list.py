@@ -1,22 +1,22 @@
 # Copyright (c) 2025, imran and contributors
 # For license information, please see license.txt
 
-import frappe
+# import frappe
 from frappe.model.document import Document
 # import json
 
 class DriverList(Document):
      pass
-@frappe.whitelist()	
-def get_diver_info(Driver_id):
-	DriverList = frappe.get_doc("Driver List", Driver_id)
-	return {
-	    "Driver_List": DriverList.driver_name,
-		"license_name": DriverList.license_name,
-        "phone_number": DriverList.phone_number,
-		"joining_date": DriverList.joining_date,
-		"salary": DriverList.salary,
-	}
+# @frappe.whitelist()	
+# def get_diver_info(Driver_id):
+# 	DriverList = frappe.get_doc("Driver List", Driver_id)
+# 	return {
+# 	    "Driver_List": DriverList.driver_name,
+# 	    "license_name": DriverList.license_name,
+#          "phone_number": DriverList.phone_number,
+# 	    "joining_date": DriverList.joining_date,
+# 	    "salary": DriverList.salary,
+# 	}
 # ------------------------------------------------------------------------------------------
 # @frappe.whitelist()
 # def single_parameter(role_profile):
@@ -57,16 +57,4 @@ def get_diver_info(Driver_id):
 #         return f"Failed: {e}"
 
 # ------------------------------------------------------------------------------------------
-# server action
-# @frappe.whitelist()
-# def server_action(**doc_name):
-#     # Step 1: Get the JSON string from 'args'
-#     args_json = doc_name.get('args')
-#     # Step 2: Parse the JSON string
-#     args = json.loads(args_json)
-#     # Step 3: Extract 'doc_name'
-#     doc_name_id = args.get('doc_name')
-
-#     if doc_name_id:
-#        del_value = frappe.db.delete('Driver List', doc_name_id)
-#        return 'deletion success'
+ 
