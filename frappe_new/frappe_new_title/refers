@@ -2696,3 +2696,236 @@ def generate_invoice():
     frappe.local.response.filename = 'invoice.pdf'
     frappe.local.response.filecontent = get_pdf(html)
     frappe.local.response.type = 'pdf'
+
+
+
+    import frappe
+from frappe.utils import nowdate
+import random
+
+def create_random_sales_entry():
+    item_list = ['iPhone', 'iPad', 'MacBook']
+    for item in item_list:
+        doc = frappe.get_doc({
+            'doctype': 'Sales Count',
+            'item_name': item,
+            'count': random.randint(10, 100),
+            'date': nowdate()
+        })
+        doc.insert(ignore_permissions=True)
+
+import frappe
+
+@frappe.whitelist()
+def get_chart_data():
+    data = frappe.db.sql("""
+        SELECT item_name, SUM(count) as total
+        FROM `tabSales Count`
+        GROUP BY item_name
+    """, as_dict=True)
+
+    labels = [d.item_name for d in data]
+    values = [d.total for d in data]
+
+    return {
+        "labels": labels,
+        "datasets": [{
+            "name": "Sales",
+            "values": values
+        }]
+    }
+
+    app_include_js = ["your_app/public/js/sales_chart_page.js"]
+
+
+    frappe.pages['sales-dashboard'].on_page_load = function(wrapper) {
+    let page = frappe.ui.make_app_page({
+        parent: wrapper,
+        title: 'Sales Dashboard',
+        single_column: true
+    });
+
+    $(wrapper).html(`<div id="chart" style="padding: 20px"></div>`);
+
+    frappe.call({
+        method: "your_app.api.sales_chart.get_chart_data",
+        callback: function(r) {
+            if (r.message) {
+                new frappe.Chart("#chart", {
+                    title: "Sales by Item",
+                    data: r.message,
+                    type: 'bar',
+                    height: 250,
+                    colors: ['#7cd6fd']
+                });
+            }
+        }
+    });
+};
+
+let chart = new frappe.ui.RealtimeChart("#chart", "test_event", 8, {
+ title: "My Realtime Chart",
+ data: data,
+ type: "line",
+ height: 250,
+ colors: ["#7cd6fd", "#743ee2"]
+});
+
+
+
+
+
+frappe.pages['realtime-demo'].on_page_load = function(wrapper) {
+    alert("JS Loaded");
+ 
+    var page = frappe.ui.make_app_page({
+        parent: wrapper,
+        title: 'Realtime Chart Demo',
+        single_column: true
+    });
+ 
+    wrapper.innerHTML += `<div id="mychart" style="margin-top: 20px; height: 300px;"></div>`;
+ 
+    window.chart = new frappe.ui.RealtimeChart("#mychart", "test_event", 10, {
+        title: "Live Leave Updates",
+        data: {
+            labels: [],
+            datasets: [
+                {
+                    name: "Leave Count",
+                    values: []
+                }
+            ]
+        },
+        type: "line",
+        height: 300,
+        colors: ["#36a2eb"]
+    });
+ 
+ 
+    window.chart.start_updating();
+};
+
+
+@frappe.whitelist()
+def get_chart_data():
+    data = frappe.db.sql("""
+        SELECT item_name, SUM(count) as total
+        FROM `tabSales Count`
+        GROUP BY item_name
+    """, as_dict=True)
+
+    labels = [d.item_name for d in data]
+    values = [d.total for d in data]
+
+    chart_data = {
+        "labels": labels,
+        "datasets": [{
+            "name": "Sales",
+            "values": values
+        }]
+    }
+
+    # publish to frontend
+    frappe.publish_realtime("disease_realtime_event", chart_data)
+
+    disease_realtime_event
+
+
+    frappe.pages['your-page-name'].on_page_load = function(wrapper) {
+    let $container = $(wrapper).html(`<div id="chart"></div>`);
+
+    // RealtimeChart create pannura
+    const chart = new frappe.ui.RealtimeChart("#chart", "disease_realtime_event", 10, {
+        title: "Sales Count",
+        data: {
+            labels: [],
+            datasets: [{
+                name: "Sales",
+                values: []
+            }]
+        },
+        type: 'bar',
+        height: 300,
+        colors: ["#ff6f69"]
+    });
+
+    chart.start_updating();
+
+    // socket listener - manual call for test
+    frappe.realtime.on("disease_realtime_event", (data) => {
+        chart.update_chart(data);  // live update
+    });
+};
+
+
+
+frappe.ui.form.on("Quotation", {
+    refresh(frm) {
+       
+        frm.add_custom_button('Scan QR/Barcode', () => {
+            new frappe.ui.Scanner({
+                dialog: true,
+                multiple: false,
+                on_scan(data) {
+                    console.log("scan Data", data);
+                    const scanned_value = data.decodedText;
+                   
+                   
+                    frm.set_value("qr_code_data", scanned_value);
+ 
+               
+                    let is_external = scanned_value.startsWith("http");
+                    console.log("is External", is_external)
+ 
+                    let link_html = `<a href="${scanned_value}" ${is_external ? 'target="_blank"' : ''} style="color: blue; text-decoration: underline;">Go to Scanned Link</a>`;
+ 
+                    frappe.msgprint({
+                        title: "Scanned Code",
+                        indicator: "green",
+                        message: `Scanned Value: <b>${scanned_value}</b><br><br>${link_html}`
+                    });
+ 
+                    console.log("Scanned:", scanned_value);
+ 
+                   
+                }
+            });
+        });
+    }
+});
+
+
+
+frm.add_custom_button('Scan QR', () => {
+    const dialog = new frappe.ui.Dialog({
+        title: 'Scan QR Code',
+        fields: [
+            {
+                fieldname: 'scanner_area',
+                fieldtype: 'HTML',
+                options: '<div id="scanner" style="width: 100%; height: 300px;"></div>',
+            },
+        ],
+        size: 'large',
+        primary_action_label: 'Close',
+        primary_action() {
+            dialog.hide();
+        },
+    });
+
+    dialog.show();
+
+    // Delay scanner init to ensure modal is fully rendered
+    setTimeout(() => {
+        new frappe.ui.Scanner({
+            selector: '#scanner',
+            multiple: false,
+            on_scan(data) {
+                console.log('Scanned data:', data);
+                frappe.msgprint(`Scanned: ${data}`);
+                dialog.hide();
+            },
+        });
+    }, 300);
+});

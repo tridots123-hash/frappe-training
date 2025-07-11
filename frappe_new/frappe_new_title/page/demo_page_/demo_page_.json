@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2025-07-09 13:05:31.689953",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-07-09 13:05:54.019846",
+ "modified_by": "Administrator",
+ "module": "frappe-new-title",
+ "name": "demo-page-",
+ "owner": "Administrator",
+ "page_name": "demo-page-",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Demo 1"
+}

@@ -56,11 +56,22 @@ app_license = "mit"
 #     "https://checkout.razorpay.com/v1/checkout.js"
 # ]
 
+scheduler_events = {
+    "cron": {
+        "*/1 * * * *": [
+            "frappe_new.frappe_new_title.doctype.sales_count.sales_count.create_random_sales_entry"
+        ],
+         "*/1 * * * *": [
+            "frappe_new.frappe_new_title.doctype.sales_count.sales_count.get_chart_data"
+        ]
+    }
+}
+
 app_include_js = "/assets/frappe_new/js/provider.js"
 
 doctype_list_js = {
     "Move": "public/js/move_list.js"
-}
+}  
 doctype_list_js = {
     "Expense Entry": "public/js/expense_entries.js"
 }

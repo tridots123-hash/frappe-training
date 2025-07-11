@@ -2,8 +2,8 @@
 # For license information, please see license.txt
 
 import frappe
+import json
 from frappe.model.document import Document
-# from frappe.utils import now,unique,random_string,validate_json_string,money_in_words,comma_and, today, add_days, format_duration, date_diff, cint, pretty_date, month_diff
 from frappe.utils import now
 from frappe.utils import getdate
 from frappe.utils import today 
@@ -20,6 +20,11 @@ from frappe.utils import validate_json_string
 from frappe.utils import random_string
 from frappe.utils import unique 
 from frappe.utils.pdf import get_pdf
+from frappe.utils import get_abbr 
+from frappe.utils import validate_url
+from frappe.utils import validate_email_address 
+from frappe.utils import validate_phone_number
+
 
 class ExpenseEntry(Document):
 	pass
@@ -157,20 +162,73 @@ def utilities():
     # 	"is_private": 0
     # }).insert(ignore_permissions=True)
     # return file_doc.file_url
-    
+# ----------------------------------------------------------------------------------------------------------------
+# get_abbr 
+    # get_abbr_data = get_abbr('imran')
+    # return get_abbr_data
 
+    # get_abbr_data = get_abbr('this is imran')
+    # return get_abbr_data
 
+    #  get_abbr_data = get_abbr('Mohammad Hussain Nagaria Frappe', max_len=4)
+    #  return get_abbr_data
+# ----------------------------------------------------------------------------------------------------------------
+# validate_url
+    # validate_url_data = validate_url('google')
+    # return validate_url_data
 
+    # validate_url_data = validate_url('https:google.com')
+    # return validate_url_data
 
+    # validate_url_data = validate_url('https://google.com', throw=True)
+    # return validate_url_data
+# ----------------------------------------------------------------------------------------------------------------
+# validate_email_address 
+# Single valid email address
+    # validate_email_address_data = validate_email_address('imran@gmail.com') 
+    # return validate_email_address_data
 
+    # validate_email_address_data = validate_email_address('other text, imran@erpnext.com, some other text')
+    # return validate_email_address_data
 
+# Multiple valid email address
+    # validate_email_address_data = validate_email_address('some text, imran@erpnext.com, some other text, frappe@erpnext.com, yet another no-emailic phrase.')
+    # return validate_email_address_data
 
+# Invalid email address
+    #  validate_email_address_data = validate_email_address('some other text')
+    #  return validate_email_address_data
+# ----------------------------------------------------------------------------------------------------------------
+# validate_phone_number 
+# Valid phone numbers
+    # validate_phone_number_data = validate_phone_number('753858375')
+    # return validate_phone_number_data
 
+    # validate_phone_number_data = validate_phone_number('+94-753858375')
+    # return validate_phone_number_data
 
+    # validate_phone_number_data = validate_phone_number('invalid') 
+    # return validate_phone_number_data
 
+    # validate_phone_number_data = validate_phone_number('87345%%', throw=True)
+    # return validate_phone_number_data
+# ----------------------------------------------------------------------------------------------------------------
+# frappe.cache()
+    # cache = frappe.cache()
+    # set_cache = cache.set('name', 'imran')
+    # get_cache = cache.get('name')
+    # print(get_cache)
 
+    # data = {
+    # 'name': 'imran',
+    # 'age': 25,
+    # 'city': 'chennai'
+    # }
 
-
+    # cache.set('user_info', json.dumps(data))  
+    # user_info = json.loads(cache.get('user_info')) 
+    # print(user_info['age'])  
+# ----------------------------------------------------------------------------------------------------------------
 
 
 

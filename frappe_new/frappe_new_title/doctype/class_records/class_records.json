@@ -17,7 +17,8 @@
   "rgt",
   "is_group",
   "old_parent",
-  "parent_class_records"
+  "parent_class_records",
+  "qr_scanner"
  ],
  "fields": [
   {
@@ -98,12 +99,17 @@
    "ignore_user_permissions": 1,
    "label": "Parent Class Records",
    "options": "Class Records"
+  },
+  {
+   "fieldname": "qr_scanner",
+   "fieldtype": "Data",
+   "label": "QR Scanner"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-30 16:14:31.959780",
+ "modified": "2025-07-10 14:54:17.936295",
  "modified_by": "Administrator",
  "module": "frappe-new-title",
  "name": "Class Records",

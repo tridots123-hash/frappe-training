@@ -1,13 +1,13 @@
 # Copyright (c) 2025, imran and contributors
 # For license information, please see license.txt
-import frappe
+# import frappe
 from frappe.model.document import Document
 
 class Move(Document):
     pass 
 
-@frappe.whitelist()
-def get_movies():
+# @frappe.whitelist()
+# def get_movies():
     # get_list data
     # movies = frappe.db.get_list("Move")
     # return movies 
