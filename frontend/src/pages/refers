@@ -1,0 +1,24 @@
+<Button @click="dialog1 = true">
+  Show Dialog
+</Button>
+<Dialog
+  :options="{
+    title: 'Confirm',
+    message: 'Are you sure you want to confirm this action?',
+    size: 'xl',
+    icon: {
+      name: 'alert-triangle',
+      appearance: 'warning',
+    },
+    actions: [
+      {
+        label: 'Confirm',
+        variant: 'solid',
+        onClick: () => {
+                      return createPromise();
+                    },
+      },
+    ],
+  }"
+  v-model="dialog1"
+/>

@@ -7,6 +7,7 @@ from frappe.model.document import Document
 from frappe.utils import now
 from frappe.utils import getdate
 from frappe.utils import today 
+from frappe.utils import get_datetime
 from datetime import datetime 
 from frappe.utils import add_to_date
 from frappe.utils import date_diff
@@ -44,10 +45,10 @@ def utilities():
     # return data
 # ----------------------------------------------------------------------------------------------------------------
 # add_to_date calculate the current now()
-    # today = datetime.now().strftime('%Y-%m-%d')
+    # today = datetime.now().strftime('%d-%m-%Y')
     # return today
 
-	# after_10_days = add_to_date(datetime.now(), days=10, as_string=True)
+	# after_10_days = add_to_date(datetime.now(), days=5, as_string=True)
 	# return after_10_days
 
     # after_2_months = add_to_date(datetime.now(), months=2)
@@ -67,7 +68,7 @@ def utilities():
 # ----------------------------------------------------------------------------------------------------------------
 # days_diff days like mon,tue,wed
     # date_1 = today()
-    # date_2 = add_to_date(date_1, days=10)
+    # date_2 = add_to_date(date_1, days=5)
     # days_diff_data = days_diff(date_2, date_1)
     # return days_diff_data
 # ----------------------------------------------------------------------------------------------------------------
@@ -77,8 +78,13 @@ def utilities():
     # month_diff_data = month_diff(date_2, date_1)
     # return month_diff_data
 # ----------------------------------------------------------------------------------------------------------------
-# pretty_date 
-    # data = pretty_date(now())
+# pretty_date now() → Gets current date & time -> Converts that into a friendly format -> get_datetime->"2025-07-25" → datetime.datetime(2025, 7, 25, 0, 0) 
+    # data = pretty_date(date_2)
+    # return data
+
+    # date_1 = today()
+    # date_2 = add_to_date(date_1, days=5)
+    # data = pretty_date(get_datetime(date_2))  
     # return data
 # ----------------------------------------------------------------------------------------------------------------
 # format_duration 60 sec = 1 minutes, 5000 sec = 1h 23m 20s, 1000000 sec = 11d 13h 46m 40s ,1000000 sec = 277h 46m 40s 
@@ -104,7 +110,7 @@ def utilities():
     # comma_and_data = comma_and('abcd')
     # return comma_and_data 
 # ----------------------------------------------------------------------------------------------------------------
-# money_in_words 
+# money_in_words USA->USD, India->INR, UK->GBP, Japan->JPY, China->CNY
     # money_in_data = money_in_words(50)
     # return money_in_data
 
@@ -118,7 +124,7 @@ def utilities():
     # return money_in_data
 # ----------------------------------------------------------------------------------------------------------------
 # validate_json_string 
-    # json_data = '{"name":"imran", "age": "67" }'
+    # json_data = '{"name":"imran", "age": 67 }'
     # json_validate = validate_json_string(json_data) 
     # return json_validate
 # ----------------------------------------------------------------------------------------------------------------
@@ -154,7 +160,7 @@ def utilities():
     # html += '</ol>'
 
     # pdf = get_pdf(html)
-    # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    # timestamp = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
     # file_doc = frappe.get_doc({
     # 	"doctype": "File",
     # 	"file_name": f"invoice_{timestamp}.pdf",
@@ -217,7 +223,7 @@ def utilities():
     # cache = frappe.cache()
     # set_cache = cache.set('name', 'imran')
     # get_cache = cache.get('name')
-    # print(get_cache)
+
 
     # data = {
     # 'name': 'imran',

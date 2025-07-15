@@ -35,8 +35,8 @@
    <span>{{ frappe.format(exps.expense_date, {'fieldtype': 'Date'}) }}</span><br>
 {% endfor %} -->
 <!-- ------------------------------------------------------------------------------------------- -->
-<!-- frappe.format_date 
-{% for exps in expenses %}
+<!-- frappe.format_date  -->
+<!-- {% for exps in expenses %}
    <span>{{ frappe.format_date(exps.expense_date) }}</span><br>
 {% endfor %} -->
 <!-- ------------------------------------------------------------------------------------------- -->
@@ -45,7 +45,7 @@
 <!-- ------------------------------------------------------------------------------------------- -->
 <!-- frappe.get_doc -->
 <!-- {% set doc = frappe.get_doc('Expense Entry', 'CUR-002') %}
-     <sapn>{{ doc.title }} - {{ doc.status }}</sapn> -->
+     <span>{{ doc.title }} - {{ doc.status }}</span> -->
 <!-- ------------------------------------------------------------------------------------------- -->
 <!-- frappe.get_all  -->
 <!-- {% set tasks = frappe.get_all('Expense Entry', filters={'status': 'Pending'}, fields=['title', 'expense_date'], order_by='expense_date asc') %}
@@ -55,7 +55,7 @@
 {% endfor %} -->
 <!-- ------------------------------------------------------------------------------------------- -->
 <!-- frappe.db.get_value  -->
-<!-- {% set title = frappe.db.get_value('Expense Entry', 'CUR-002', 'title') %}
+<!-- {%set title = frappe.db.get_value('Expense Entry', 'CUR-002', 'title') %}
 <span>{{ title }}</span> -->
 <!-- ------------------------------------------------------------------------------------------- -->
 <!-- frappe.db.get_value multi -->
@@ -84,10 +84,10 @@ It also has a status field.
 {% endif %} -->
 <!-- ------------------------------------------------------------------------------------------- -->
 <!-- frappe.get_fullname  -->
-<!-- frappe.render_template("Hello {{ name }}!", {"name": "Karthik"}) -->
+<!-- {{ frappe.render_template("Hello {{ name }}!", {"name": "Karthik"}) }} -->
 <!-- ------------------------------------------------------------------------------------------- -->
 <!-- frappe._-->
-<!-- {{ _('This string should get translated') }} -->
+ <!-- {{ frappe.__('This string should get translated') }} -->
 <!-- ------------------------------------------------------------------------------------------- -->
 
 {% endblock %}
